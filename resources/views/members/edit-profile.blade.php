@@ -17,7 +17,7 @@
     <div class="admin-edit-block">
 
       <div class="admin-edit-info">
-        
+
         @if($user->avatar)
             <div class="member-avatars">
                 <img src="{{ asset('storage/' . $user->avatar) }}" alt="">
@@ -64,14 +64,14 @@
       <div class="admin-edit-input">
 
         <div class="admin-edit-data">
-            <div class="input-width"">
+            <div class="input-width">
                 <p>Имя</p>
                 <input type="text" name="name" value="{{ $user->name }}">
                 @error('name')
                 <div class="error-message">{{$message}}</div>
                 @enderror
             </div>
-            <div class="input-width"">
+            <div class="input-width">
                 <p>Фамилия</p>
                 <input type="text" name="second_name" value="{{ $user->second_name }}">
                 @error('second_name')
@@ -81,14 +81,14 @@
         </div>
 
         <div class="admin-edit-data">
-            <div class="input-width"">
+            <div class="input-width">
                 <p>Телефон</p>
                 <input type="text" name="phone" id="phone" oninput="formatPhoneNumber()" maxlength="18" value="{{ $user->phone }}">
                 @error('phone')
                 <div class="error-message">{{$message}}</div>
                 @enderror
             </div>
-            <div class="input-width"">
+            <div class="input-width">
                 <p>Дата Рождения</p>
                 <input type="date" name="date" value="{{ $user->date }}">
                 @error('date')
@@ -135,20 +135,9 @@
             </div>
       </div>
 
-      <div class="admin-edit-about">
-        <div class="data-event">
-                 <p>Учавствовал: 24</p>
-                 
-                 <ul>
-                <li>Помощь ветеранам</li>
-                <li>Корм для животных</li>
-                <li>Уборка территории</li>
-                <li>Одежда в детские дома</li>
-                </ul>       
-            </div>
-        </div>
 
-      
+
+
 
 </div>
 </form>
@@ -191,4 +180,3 @@
 
 
 
-       

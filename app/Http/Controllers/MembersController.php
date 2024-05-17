@@ -11,9 +11,11 @@ class MembersController extends Controller
     public function index()
     {
         // Получаем всех пользователей из базы данных
-        $user = User::all();
-        
+        $usersQuery = User::query();
+
+        $users = $usersQuery->paginate(5);
+
         // Передаем данные пользователей в представление
-        return view('members', compact('user'));
+        return view('members', compact('users'));
     }
 }

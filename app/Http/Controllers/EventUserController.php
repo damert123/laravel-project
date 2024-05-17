@@ -20,11 +20,11 @@ class EventUserController extends Controller
         if (!auth()->check()) {
             return redirect()->route('login')->with('warning', 'Войдите или зарегистрируйтесь, чтобы записаться на мероприятие');
         }
-        
-        
+
+
         // Получаем мероприятие
         $event = Event::findOrFail($eventId);
-        
+
         // Получаем текущего пользователя
         $user = auth()->user();
 
@@ -32,9 +32,9 @@ class EventUserController extends Controller
         if ($event->users()->where('users.id', $user->id)->exists()) {
             return redirect()->route('info-event', $eventId)->with('success', 'Вы уже записаны на это мероприятие');
         }
-        
+
         $event->users()->attach($user);
-        
+
         return redirect()->route('info-event', $eventId)->with('success', 'Вы успешно записались на мероприятие');
     }
 
@@ -42,7 +42,7 @@ class EventUserController extends Controller
 {
     // Получаем мероприятие
     $event = Event::findOrFail($eventId);
-    
+
     // Получаем текущего пользователя
     $user = auth()->user();
 
@@ -56,5 +56,8 @@ class EventUserController extends Controller
 
     return redirect()->back()->with('success', 'Вы успешно отменили запись на мероприятие');
 }
+
+
+
 
 }

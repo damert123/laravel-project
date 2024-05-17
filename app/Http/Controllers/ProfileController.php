@@ -13,19 +13,24 @@ class ProfileController extends Controller
     {
         // Получаем текущего аутентифицированного пользователя
         $user = Auth::user();
-        
+
+        $getEvent = $user->events()->get();
+
+
         // Передаем данные пользователя в представление
-        return view('private', compact('user'));
+        return view('private', compact('user', 'getEvent'));
     }
 
     public function edit()
     {
     // Получаем текущего аутентифицированного пользователя
     $user = Auth::user();
-    
+
     // Передаем данные пользователя в представление для редактирования
     return view('edit', compact('user'));
     }
+
+
 
     public function update(UpdateprofileRequest $req)
 {
@@ -33,7 +38,7 @@ class ProfileController extends Controller
 
     // Получаем текущего аутентифицированного пользователя
     $user = Auth::user();
-    
+
     // Обновляем данные пользователя
     $user->update([
         'name' => $req->input('name'),
@@ -50,10 +55,10 @@ class ProfileController extends Controller
       if ($req->hasFile('avatar')) {
         // Получаем файл из запроса
         $avatar = $req->file('avatar');
-        
+
         // Сохраняем файл
         $path = $avatar->store('avatars', 'public');
-        
+
         // Обновляем путь к аватару пользователя в базе данных
         $user->update(['avatar' => $path]);
     }
