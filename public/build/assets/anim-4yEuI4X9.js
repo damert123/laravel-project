@@ -1,0 +1,1 @@
+function s(e){e.forEach(t=>{t.isIntersecting?t.target.classList.add("element-show"):t.target.classList.remove("element-show")})}let o={threshold:[.5]},l=new IntersectionObserver(s,o),r=document.querySelectorAll(".block-stats");for(let e of r)l.observe(e);
