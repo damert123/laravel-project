@@ -12,15 +12,15 @@
 
 
 
-        
+
 
         <div class="container">
     <div class="member-block">
 
 
         <div class="member-firts">
-            
-        
+
+
             @if($user->avatar)
             <div class="member-avatars">
                 <img src="{{ asset('storage/' . $user->avatar) }}" alt="">
@@ -42,11 +42,14 @@
                         </form>
                 </div>
 
+
+                @if($user->role == \App\Models\User::ROLE_ADMIN)
                 <div class="member-admin">
                     <p><img src="" alt="">Админ</p>
                     <a href="{{route ('admin.event.settings-event')}}"><img src="" alt="">Мероприятия</a>
                     <a href=""><img src="" alt="">Новости</a>
                 </div>
+               @endif
         </div>
 
 
@@ -54,12 +57,12 @@
             <div class="member-stat-social-block">
                 <div class="member-stat">
                     <h2>Добрых дел</h2>
-                    
-                        
+
+
                     <h2><img src="{{ asset('img/heart.svg') }}" alt="">3</h2>
-                    
+
                 </div>
-                
+
                 <div class="member-social">
                 <p><img src="" alt="">Соц-сети</p>
                     <div class="member-social-img">
@@ -69,7 +72,7 @@
                 </div>
             </div>
 
-           
+
         </div>
 
 
@@ -80,7 +83,7 @@
         <div class="member-info-main">
             <p style="font-weight:500;">Волонтер</p>
             <div class="member-name">
-                    
+
                     <h1>{{ $user->second_name }} {{ $user->name }} </h1>
                     <?php
                         // Получаем дату рождения пользователя из модели
@@ -99,9 +102,9 @@
                         echo "<p>Возраст: $age лет</p>";
                         ?>
                 </div>
-                
+
                 <div class="member-info">
-                
+
                     <div class="member-group">
                         <h2><img src="{{ asset('img/gruup.svg') }}" alt="">Группа: </h2>
                         <p>{{ $user->groupp }}</p>
@@ -110,28 +113,40 @@
                         <h2><img src="{{ asset('img/mail.svg') }}" alt="">Почта</h2>
                         <p>{{ $user->email }}</p>
                     </div>
-                    
+
                 </div>
 
         </div>
-           
+
 
             <div class="member-event">
-                <p>Записи на мероприятия: 1</p>
-                <div class="profile-stat-event">
-                    <p>Тестовое мероприятие</p>
-                    <p >Начало:15.05.2024</p>
-                    <a href="">Подробнее</a>
-                </div>
-                <div class="profile-stat-event">
-                    <p>Тестовое мероприятие</p>
-                    <p >Начало:15.05.2024</p>
-                    <a href="">Подробнее</a>
-                </div>
 
-                
+
+                @if($getEvent->count() > 0)
+                    <p style="font-weight: 500;">Записи на мероприятия: {{$getEvent->count()}}</p>
+                    @foreach($getEvent as $event)
+
+                        <div class="profile-stat-event">
+                            <p>{{$event->header}}</p>
+                            <p>Начало: {{\Carbon\Carbon::parse($event->date_start)->format('d.m.Y')}}</p>
+                            <a href="{{route('info-event', $event->id)}}">Подробнее</a>
+                        </div>
+
+
+
+
+                    @endforeach
+                @else
+                    <p style="font-weight: 500;">Записи на мероприятия</p>
+                        <div style="margin-top: 10px; ">Нет записей на мероприятия</div>
+                @endif
+
+
+
+
+
             </div>
-            
+
             <div class="member-about">
                 <p>О себе</p>
                 <textarea name="" id="" cols="30" rows="10" readonly>{{ $user->about }}</textarea>
@@ -139,7 +154,7 @@
 
         </div>
 
-        
+
 
 
 
@@ -165,13 +180,15 @@ textareas.forEach((textarea) => {
 });
 </script>
 
+@endsection
+
 @include('inc.footer')
 
-    
 
 
 
-   
+
+
 
 
 
