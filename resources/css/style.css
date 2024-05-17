@@ -10,6 +10,18 @@ body {
 
 }
 
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.content{
+    flex: 1;
+}
+
+
+
 .container {
     width: 75%;
     margin: 0 auto;
@@ -288,6 +300,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
+
 }
 
 .footer .footer-block .tel {
@@ -1332,6 +1345,7 @@ body {
 
 }
 
+
 .profile-logo-ava a img {
     width: 20px;
     margin-right: 10px;
@@ -2230,6 +2244,7 @@ body {
 }
 
 .news-block-about p {
+    margin-top: 15px;
     margin-bottom: 10px;
     font-size: 18px;
 }
@@ -2345,6 +2360,7 @@ body {
     border-radius: 15px;
     font-family: 'Montserrat', sans-serif;
     transition: 0.3s ease;
+    margin-bottom: 15px;
 }
 .news-block-about button:hover {
     background: #1d53f5;
@@ -2647,6 +2663,61 @@ textarea.error-event {
 
 
 }
+
+.my-nav {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+
+
+}
+
+
+.my-nav nav ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+    border: 1px solid #4e77f4;
+    background: #ffffff;
+    border-radius: 10px;
+
+}
+
+.my-nav nav ul li{
+    border-right: 1px solid #4e77f4;
+    padding: 10px;
+    transition:  all 0.2s ease ;
+
+
+
+}
+
+
+
+.my-nav nav ul li:hover{
+    background-color: #4e77f4;
+    color: #ffffff;
+
+}
+
+.my-nav nav ul li:last-child{
+    border: none;
+    border-bottom-right-radius: 9px;
+    border-top-right-radius: 9px;
+
+
+}
+
+.my-nav nav ul li:first-child{
+
+    border-bottom-left-radius: 9px;
+    border-top-left-radius: 9px;
+
+}
+
+
 
 
 

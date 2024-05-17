@@ -12,14 +12,21 @@
         {{ session('success') }}
     </div>
 @endif
-    <div class="event-block container ">
-        <div class="obertka">
+
+<div class="wrapper">
+
+
+    <div class="content">
+        <div class="event-block container ">
+
             <div class="logo-event">
                 <div class="create-event-btn">
                     <h1 class="anim_items activee">Мероприятия</h1>
                     <h2 class="anim_items ">Актуальные мероприятия</h2>
                 </div>
-                <a href="{{ route('admin.event.event-create') }}"><img src="{{asset ('img/plus.svg')}}" alt="" style="margin-right: 5px;">Создать Мероприятие</a>
+                <a href="{{ route('admin.event.event-create') }}"><img src="{{asset ('img/plus.svg')}}" alt=""
+                                                                       style="margin-right: 5px;">Создать
+                    Мероприятие</a>
 
             </div>
             <div class="event-items">
@@ -40,7 +47,9 @@
                         <div class="icon-event">
                             <div><img src="img/location.svg" alt=""> {{$item->location}} </div>
 
-                            <div><img src="img/date.svg" alt=""> <time>Создано: {{$item->created_at->format('d.m.y')}}</time></div>
+                            <div><img src="img/date.svg" alt="">
+                                <time>Создано: {{$item->created_at->format('d.m.y')}}</time>
+                            </div>
                         </div>
 
 
@@ -52,7 +61,9 @@
 
             </div>
         </div>
-        </div>
+    </div>
+
+</div>
 
 
     @include('inc.footer')
