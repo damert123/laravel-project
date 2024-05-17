@@ -20,7 +20,7 @@ return new class extends Migration
             $table->date('date_end')->nullable();
             $table->string('organizer');
             $table->string('location');
-            $table->text('require')->nullable()->default('Нет');
+            $table->text('require')->nullable();
             $table->timestamps();
         });
     }
