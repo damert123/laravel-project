@@ -31,11 +31,11 @@
         <div class="load__elem"></div>
     </div> -->
 
-    
+
     @yield('content')
     @yield('login')
-     
-    
+
+
 
 
     @yield('reg')
@@ -46,14 +46,15 @@
     @yield('profile')
     @yield('members')
     @yield('profile')
+    @yield('private')
     @yield('new')
     @yield('footer')
     @yield('event-create')
     @yield('info-event')
-    
-    
-    
-    
+
+
+
+
 </body>
 
 </html>
