@@ -10,7 +10,7 @@
                 </div>
                 <div class="tel">
                     <img src="img/email.png" alt="" srcset="">
-                    <a href="">oplachko.nn@yandex.ru</a>
+                    <a href="">example@yandex.ru</a>
                 </div>
 
             </div>
