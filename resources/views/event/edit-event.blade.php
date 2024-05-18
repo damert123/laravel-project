@@ -13,12 +13,12 @@
 @endif
 
 <div class="news-added-block  container ">
-    <form action="{{ route('admin.event.edit-event', $event->id) }}" method="post" enctype="multipart/form-data">
+    <form action="{{ route('admin.event.update-event', $event->id) }}" method="post" enctype="multipart/form-data">
     @csrf
         <h1 class='anim_items' style="margin-bottom: 10px;">Редактирование </h1>
-        
+
         <div class="news-backgr" style="border: 3px solid #ffd437;">
-           
+
 
             <div class="news-flex">
                 <div class="news-added-img">
@@ -43,18 +43,18 @@
                     <div class="">
                         <p>Даты проведения С:</p>
                         <input type="date" value="{{ $event->date_start }}" name="date_start" class="@error('date_start') error-event @enderror">
-                        
+
                     </div>
-                    
+
                     <div class="">
                         <p>ДО:(необязательно) </p>
                         <input type="date" name="date_end" value="{{ $event->date_end }}" class="@error('date_end') error-event @enderror">
-                        
+
                     </div>
                 </div>
-                
+
             </div>
-            
+
 
             <div class="news-block-about">
 
@@ -65,16 +65,16 @@
                                 <div class="error-message">{{$message}}</div>
                                 @enderror
                 </div>
-                
+
 
                 <div class="news-added-description">
                     <p>Описание мероприятия</p>
-                    <textarea  name="descrip" type="text"  class="@error('descrip') error-event @enderror">{{ $event->descrip }}</textarea>
+                    <textarea  name="descrip"  class="@error('descrip') error-event @enderror">{{ $event->descrip }}</textarea>
                     @error('descrip')
                                 <div class="error-message">{{$message}}</div>
                                 @enderror
                 </div>
-                
+
                 <div class="event-added-info">
                     <p>Организатор</p>
                     <input name="organizer" type="text" value="{{ $event->organizer }}" placeholder="Например: ТСПК" class="@error('organizer') error-event @enderror">
@@ -151,3 +151,4 @@ textareas.forEach((textarea) => {
 });
 </script>
 
+@endsection

@@ -60,7 +60,7 @@ Route::get('/info-event/{id}', [EventController::class, 'open'])->name('info-eve
 Route::get('/news', [NewsController::class, 'show'])->name('news');
 Route::get('/new/{id}', [NewsController::class, 'open'])->name('new');
 
-   
+
 
 // Route::get('/profile', function () {
 //     return view('profile');
@@ -85,17 +85,17 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::get('/event/settings-event', [EventController::class, 'showSettings'])
         ->name('event.settings-event')
         ->middleware('auth', 'admin' );
-    
+
     Route::delete('/event/delete/{id}', [EventController::class, 'deleteEvent'])
         ->name('event.delete')
         ->middleware('auth', 'admin');
-    
+
     Route::get('/event/edit-event/{id}', [EventController::class, 'openEdit'])
         ->name('event.edit-event')
         ->middleware('auth', 'admin' );
 
     Route::post('/event/edit-event/{id}', [EventController::class, 'update'])
-        ->name('event.edit-event')
+        ->name('event.update-event')
         ->middleware('auth', 'admin' );
 
     Route::post('/members/edit-profile/{id}', [MembEditController::class, 'update'])
@@ -144,7 +144,7 @@ Route::name('user.')->group(function(){
     // Route::post('/logout', [\App\Http\Controllers\LoginController::class, 'logout']);
     Route::post('/logout', [\App\Http\Controllers\LoginController::class, 'logout'])->name('logout');
 
-   
+
 
     Route::get('/register', function(){
         if (Auth::check()){
@@ -155,14 +155,14 @@ Route::name('user.')->group(function(){
 
     Route::post('/register', [\App\Http\Controllers\RegisterController::class, 'save']);
     Route::post('/edit', [\App\Http\Controllers\ProfileController::class, 'update'])->name('user.edit')->middleware('auth');
-    
+
     Route::get('/private', [ProfileController::class, 'show'])->name('private')->middleware('auth');
     Route::get('/edit', [ProfileController::class, 'edit'])->name('edit')->middleware('auth');
 
     Route::post('/info-event/{eventId}', [EventUserController::class, 'store'])->name('info-event');
     Route::delete('/info-event/{eventId}', [EventUserController::class, 'cancel'])->name('cancel-event');
 
-    
+
 
 });
 
