@@ -6,7 +6,7 @@
             <div class="footer-item">
                 <div class="tel">
                     <img src="img/phone.png" alt="" srcset="">
-                    <a href="">+7 (927)-788-38-44</a>
+                    <a href="">+7 (900)-555-35-35</a>
                 </div>
                 <div class="tel">
                     <img src="img/email.png" alt="" srcset="">

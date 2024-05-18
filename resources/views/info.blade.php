@@ -19,11 +19,11 @@
             </div>
             <div class="info-text">
                 <img src="img/phone.png" alt="">
-                <p>+7 (927)-788-38-44</p>
+                <p>+7 (900)-555-35-35</p>
             </div>
             <div class="info-text">
                 <img src="img/email.png" alt="">
-                <p>oplachko.nn@yandex.ru</p>
+                <p>example@yandex.ru</p>
             </div>
             <div class="info-text">
 

@@ -34,13 +34,9 @@
 
     @yield('content')
     @yield('login')
-
-
-
-
     @yield('reg')
     @yield('event')
-
+    @yield('edit-event')
     @yield('news')
     @yield('info')
     @yield('profile')
