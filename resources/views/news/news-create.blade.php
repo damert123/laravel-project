@@ -9,10 +9,10 @@
 
 
 <div class="news-added-block  container ">
-    <form action="{{ route('admin.news.news-create') }}" method="post" enctype="multipart/form-data">
+    <form action="{{ route('admin.news.news-create-new') }}" method="post" enctype="multipart/form-data">
     @csrf
         <h1 class='anim_items' style="margin-bottom: 10px;">Добавить новость</h1>
-        
+
         <div class="news-backgr">
             @if($errors->any())
             <ul>
@@ -20,7 +20,7 @@
                 <li>{{ $error }}</li>
                 @endforeach
             </ul>
-            
+
             @endif
 
             <div class="news-flex">
@@ -32,9 +32,9 @@
                     </label>
                     <p id="file-name" style="margin-top: 10px;"></p>
                 </div>
-                
+
             </div>
-            
+
 
             <div class="news-block-about">
 
@@ -45,7 +45,7 @@
 
                 <div class="news-added-description">
                     <p>Описание новости</p>
-                    <textarea name="descrip" type="text"></textarea>
+                    <textarea name="descrip" ></textarea>
                 </div>
                 <div class="news-added-info">
                     <p style="margin: 0">Участвовало волонтеров</p>
@@ -99,3 +99,6 @@ textareas.forEach((textarea) => {
     });
 });
 </script>
+
+
+@endsection

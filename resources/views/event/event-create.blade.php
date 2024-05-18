@@ -7,12 +7,12 @@
 @section('event-create')
 
 <div class="news-added-block  container ">
-    <form action="{{ route('admin.event.event-create') }}" method="post" enctype="multipart/form-data">
+    <form action="{{ route('admin.event.event-create-event') }}" method="post" enctype="multipart/form-data">
     @csrf
         <h1 class='anim_items' style="margin-bottom: 10px;">Создать Мероприятие</h1>
-        
+
         <div class="news-backgr">
-           
+
 
             <div class="news-flex">
                 <div class="news-added-img">
@@ -37,18 +37,18 @@
                     <div class="">
                         <p>Даты проведения С:</p>
                         <input type="date" name="date_start" class="@error('date_start') error-event @enderror">
-                        
+
                     </div>
-                    
+
                     <div class="">
                         <p>ДО:(необязательно) </p>
                         <input type="date" name="date_end" class="@error('date_end') error-event @enderror">
-                        
+
                     </div>
                 </div>
-                
+
             </div>
-            
+
 
             <div class="news-block-about" style="background: none">
 
@@ -61,17 +61,17 @@
                                     <div class="error-message">{{$message}}</div>
                                     @enderror
                     </div>
-                    
+
 
                     <div class="news-added-description">
                         <p>Описание мероприятия</p>
-                        <textarea  name="descrip" type="text" class="@error('descrip') error-event @enderror"></textarea>
+                        <textarea  name="descrip"  class="@error('descrip') error-event @enderror"></textarea>
                         @error('descrip')
                                     <div class="error-message">{{$message}}</div>
                                     @enderror
                     </div>
                 </div>
-                
+
                 <div class="news-info-block">
                     <div class="event-added-info">
                         <p>Организатор</p>
@@ -144,3 +144,6 @@ textareas.forEach((textarea) => {
     });
 });
 </script>
+
+
+@endsection

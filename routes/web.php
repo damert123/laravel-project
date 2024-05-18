@@ -108,7 +108,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
         ->middleware('auth', 'admin' );
 
     Route::post('/news/news-create', [CreateNewsController::class, 'save'])
-        ->name('news.news-create')
+        ->name('news.news-create-new')
         ->middleware('auth', 'admin' );
 
     Route::get('/event/event-create', function () {
@@ -117,7 +117,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
         ->middleware('auth', 'admin' );
 
     Route::post('/event/event-create', [CreateEventController::class, 'store'])
-        ->name('event.event-create')
+        ->name('event.event-create-event')
         ->middleware('auth', 'admin' );
 });
 
