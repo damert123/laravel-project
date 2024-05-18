@@ -15,9 +15,9 @@
     </div>
 @endif
 
-
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <div class="info-event container">
-       
+
         <div class="info-event-block">
             <div class="event-item-logo">
                 <div class="event-logo-text">
@@ -44,12 +44,12 @@
     <p>Для записи нужно <a href="{{ route('user.login') }}">войти</a></p>
 @endif
 
-        
+
                 </div>
 
         <div class="event-info-members">
             <p><img src="" alt="">Участников: {{ $participants->count() }} - <a href="#" class="btn-plus open-popup-members">Посмотреть</a> </p>
-            
+
         </div>
             </div>
 
@@ -104,27 +104,27 @@
 
 
 
-                
+
             </div>
         </div>
 
         <div class="popup-bg">
-        
+
             <div class="block-members-event popup">
 
-            <img class="close-popup-members" src="{{asset ('img/close.svg')}}" alt="icon"> 
+            <img class="close-popup-members" src="{{asset ('img/close.svg')}}" alt="icon">
 
-            
+
             <div class="members-event-popup">
             <h2 style="margin:50px 0 20px 0; text-align: center;">Участники мероприятия</h2>
             @if(isset($participants) && count($participants) > 0)
                 <ul>
-                
+
                     @foreach($participants as $participant)
                         <li><img src="{{asset ('storage/' . $participant->avatar )}}" alt="">{{ $participant->name }} {{ $participant->second_name }}</li>
                     @endforeach
                 @else
-                <p style="text-align:center; margin: auto;">Участников нет</p>  
+                <p style="text-align:center; margin: auto;">Участников нет</p>
                 @endif
                 </ul>
             </div>
@@ -132,11 +132,11 @@
             </div>
         </div>
 
-        
-        
+
+
     </div>
 
 
 
-    
+
     @include('inc.footer')
