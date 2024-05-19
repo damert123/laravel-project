@@ -782,6 +782,7 @@ body {
 /* ===========СТИЛИ ДЛЯ ПОДАЧИ ЗАЯВКИ =========== */
 
 .call-text {
+    margin-top: 100px;
     text-align: center;
     margin-bottom: 30px;
     font-size: 35px;
@@ -1190,7 +1191,7 @@ body {
         font-size: 15px;
     }
     .call-input select {
-        width: 90%;
+        width: 80%;
     }
     .header .headerOne .logo .logoText p {
         display: none;

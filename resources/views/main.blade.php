@@ -9,36 +9,37 @@
 @auth
 <div class="container news">
         <h1 class="anim_items">Последние новости</h1>
-        
+
         <div class="news_blocks">
-     
+
         @foreach ($freshNews as $item)
         <article class="new_block">
-                
 
-                <img src="{{ asset ('storage/' . $item->picture) }}" class="logo-news" alt="тут фотка новостей";">
 
+            <a href="{{route ('new', $item->id)}}">
+                <img src="{{ asset ('storage/' . $item->picture) }}" class="logo-news" alt="тут фотка новостей">
+            </a>
                 <h3>{{ $item->header }}</h3>
 
                 <div class="news-feature">
-                    <div >
+                    <div>
                     <img src="img/date.svg" alt=""> <time>{{ $item->created_at->format('d.m.y') }}</time>
                     </div>
                     <div>
                         @if($item->members != null)
                     <img src="img/people.svg" alt=""> <time> Участвовали: {{ $item->members }}</time>
-                    @else 
+                    @else
                     <img src="img/people.svg" alt=""> <time> Нет участников</time>
                     @endif
                     </div>
 
-                    
+
                 </div>
             </article>
             @endforeach
 
-          
-            
+
+
         </div>
         <a class="btn_more" href="news.html">Читать больше</a>
         <img src="" alt="">
@@ -114,60 +115,7 @@
     </div>
 
 
-    <div class="call-text container">
-        <h1>Стать <span style="color: #3F3E46;">волонтером</span></h1>
-    </div>
-    <div class="call-back container">
 
-        <div class="call-block">
-
-            <div class="call-input" placeholder="Имя Фамилия">
-                <h2>Заполните форму</h2>
-                <p>Имя </p>
-                <input type="text" placeholder="Введите Имя ">
-
-            </div>
-
-            <div class="call-input">
-                <p>Фамилия</p>
-                <input type="text" placeholder="Введите Фамилия">
-            </div>
-
-            <div class="call-input">
-                <p>Группа</p>
-                <select name="" id="">
-                    <option value="">ИСиП-31</option>
-                    <option value="">ИСиП-32</option>
-                    <option value="">ИСиП-33</option>
-                    <option value="">ИСиП-21</option>
-                    <option value="">ИСиП-22</option>
-                    <option value="">ИСиП-11</option>
-                    <option value="">ИСиП-12</option>
-                </select>
-            </div>
-
-            <div class="call-input">
-                <p>Телефон</p>
-                <input type="text" id="phone" placeholder="Введите номер телефона" oninput="formatPhoneNumber()" maxlength="18">
-            </div>
-            <div class="call-input">
-                <p>Пароль</p>
-                <input type="text" placeholder="Пароль">
-            </div>
-
-            <div class="call-input">
-                <p>Email</p>
-                <input type="text" placeholder="example@mail.ru">
-            </div>
-
-
-
-            <div class="btn-call">
-                <button>Стать волонтером</button>
-            </div>
-        </div>
-
-    </div>
 
     @else
         <div class="main-action-block" style="background-image: url('{{ asset('img/main-action-logo.jpg') }}');">
@@ -255,14 +203,69 @@
             </div>
         </div>
 
-        
+        <div class="call-text container">
+            <h1>Стать <span style="color: #3F3E46;">волонтером</span></h1>
+        </div>
+        <div class="call-back container">
+
+            <div class="call-block">
+
+                <div class="call-input" placeholder="Имя Фамилия">
+                    <h2>Заполните форму</h2>
+                    <p>Имя </p>
+                    <input type="text" placeholder="Введите Имя ">
+
+                </div>
+
+                <div class="call-input">
+                    <p>Фамилия</p>
+                    <input type="text" placeholder="Введите Фамилия">
+                </div>
+
+                <div class="call-input">
+                    <p>Группа</p>
+                    <select name="" id="">
+                        <option value="">ИСиП-31</option>
+                        <option value="">ИСиП-32</option>
+                        <option value="">ИСиП-33</option>
+                        <option value="">ИСиП-21</option>
+                        <option value="">ИСиП-22</option>
+                        <option value="">ИСиП-11</option>
+                        <option value="">ИСиП-12</option>
+                    </select>
+                </div>
+
+                <div class="call-input">
+                    <p>Телефон</p>
+                    <input type="text" id="phone" placeholder="Введите номер телефона" oninput="formatPhoneNumber()" maxlength="18">
+                </div>
+                <div class="call-input">
+                    <p>Пароль</p>
+                    <input type="text" placeholder="Пароль">
+                </div>
+
+                <div class="call-input">
+                    <p>Email</p>
+                    <input type="text" placeholder="example@mail.ru">
+                </div>
+
+
+
+                <div class="btn-call">
+                    <button>Стать волонтером</button>
+                </div>
+            </div>
+
+        </div>
+
+
     </div>
 
     @endauth
-    
+
     @include('inc.footer')
-    
-    
-   
+
+
+
     @endsection
 
