@@ -15,14 +15,14 @@
                 <li>{{ $error }}</li>
                 @endforeach
             </ul>
-            
+
             @endif
             <form action="{{ route('user.login') }}" method="post">
                 @csrf
                 <h2>Вход</h2>
 
-              
-                        
+
+
 
                 <div class="login-imp">
                     <p>Почта</p>
@@ -40,7 +40,7 @@
                     </div>
                 </div>
 
-               
+
 
 
 
@@ -54,3 +54,5 @@
             </form>
         </div>
     </div>
+
+@endsection

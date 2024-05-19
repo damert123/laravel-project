@@ -483,7 +483,7 @@ body {
 
 .news-feature {
     display: flex;
-   justify-content: flex-start;
+    justify-content: flex-start;
     font-size: 16px;
     flex-wrap: wrap;
     flex-direction: column;
@@ -1616,14 +1616,14 @@ body {
 
 .event-added-info input {
 
-        width: 80%;
-        height: 45px;
-        border: 1px solid #d1d5db;
-        border-radius: 5px;
-        padding: 5px 10px;
-        font-family: 'Montserrat', sans-serif;
-        box-shadow: 0 0 5px rgba(0, 0, 0, 0.03);
-        transition: border-color 0.3s ease;
+    width: 80%;
+    height: 45px;
+    border: 1px solid #d1d5db;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-family: 'Montserrat', sans-serif;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.03);
+    transition: border-color 0.3s ease;
 }
 
 .event-added-info input:focus {
@@ -2509,8 +2509,8 @@ body {
     from{
         transform: rotate(0deg);
     } to{
-        transform: rotate(360deg);
-    }
+          transform: rotate(360deg);
+      }
 }
 
 input.error-event {
@@ -2597,7 +2597,7 @@ textarea.error-event {
     justify-content: center;
     border-radius: 10px;
     font-weight: 400;
-    font-family: 'Montserrat';
+    font-family: "Montserrat";
     filter: drop-shadow(-4px -4px 50px rgb(000, 000, 0, 0.1));
 }
 

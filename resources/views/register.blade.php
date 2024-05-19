@@ -18,23 +18,23 @@
                 <li>{{ $error }}</li>
                 @endforeach
             </ul>
-            
+
             @endif
 
             <div class="call-block" >
                 <form action="{{ route('user.register') }}"  method="post">
-                    @csrf 
+                    @csrf
                     <div class="call-input" placeholder="Имя Фамилия">
                         <h2>Регистрация</h2>
                         <p>Имя </p>
                         <input type="text" name="name" placeholder="Введите Имя ">
-                        
+
                     </div>
 
                     <div class="call-input">
                         <p>Фамилия</p>
                         <input type="text" name="second_name"  placeholder="Введите Фамилия">
-                        
+
                     </div>
 
                     <div class="call-input">
@@ -52,31 +52,31 @@
 											<option value="ИСиП-11">ИСиП-11</option>
 											<option value="ИСиП-12">ИСиП-12</option>
 									</select>
-                        
+
                     </div>
 
                     <div class="call-input">
                         <p>Дата рождения</p>
                         <input type="date" id="date" name="date" style="font-size: 18px;">
-                        
+
                     </div>
 
                     <div class="call-input ">
                         <p>Телефон</p>
                         <input name="phone" type="text" id="phone" placeholder="Введите номер телефона" oninput="formatPhoneNumber()" maxlength="18">
-                        
+
                     </div>
-                   
+
                     <div class="call-input">
                         <p>Пароль</p>
                         <input name="pass" id="pass" type="password" placeholder="Пароль">
-                        
+
                     </div>
 
                     <div class="call-input">
                         <p>Email</p>
                         <input name="email" id="email" type="text" placeholder="example@mail.ru">
-                        
+
                     </div>
 
 
@@ -88,9 +88,9 @@
                     <div class="not-reg">
                     <a href="login.php">Я меня уже есть аккаунт</a>
                 </div>
-                     
 
-                    
+
+
                 </form>
             </div>
 
@@ -132,4 +132,6 @@
     input.value = formattedPhoneNumber;
 }
    </script>
+
+@endsection
 

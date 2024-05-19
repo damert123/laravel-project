@@ -8,7 +8,6 @@ export default defineConfig({
                 'resources/css/app.css',
                 'resources/css/style.css',
                 'resources/scss/app.scss',
-
                 'resources/js/app.js',
                 'resources/js/anim.js',
                 'resources/js/hmain.js',
