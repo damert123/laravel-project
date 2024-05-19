@@ -64,6 +64,8 @@
         <div class="my-nav container">{{$users->withQueryString()->links('pagination::bootstrap-4')}}</div>
     </div>
 </div>
-
+@endsection
 
     @include('inc.footer')
+
+

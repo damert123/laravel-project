@@ -105,7 +105,7 @@
 </script>
 
 
-
+@endsection
 <!--
 <div class="popup-bg-delete">
     <div class="block-members-event popup">

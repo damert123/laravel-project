@@ -2597,7 +2597,7 @@ textarea.error-event {
     justify-content: center;
     border-radius: 10px;
     font-weight: 400;
-    font-family: "Montserrat";
+    font-family: 'Montserrat';
     filter: drop-shadow(-4px -4px 50px rgb(000, 000, 0, 0.1));
 }
 

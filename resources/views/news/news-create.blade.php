@@ -80,6 +80,8 @@ function previewAvatar(event) {
         preview.src = '#';
     }
 }
+
+
 </script>
 <script>
     // Находим все textarea на странице
@@ -101,4 +103,7 @@ textareas.forEach((textarea) => {
 </script>
 
 
-@endsection
+    @endsection
+    @include('inc.footer')
+
+

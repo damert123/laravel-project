@@ -48,7 +48,7 @@
         </a>
     </div>
 @endauth
-          
+
             <div class="burgerMenu" onclick="burgerMenu(this)">
                 <div class="b1"></div>
                 <div class="b2"></div>
@@ -56,4 +56,6 @@
             </div>
         </div>
     </header>
+
+@endsection
 

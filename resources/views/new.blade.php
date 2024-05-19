@@ -33,12 +33,12 @@
             </script>
 
 
-           <div class="descripNews">  
+           <div class="descripNews">
            <p>{{ $new->descrip}} </p>
-            </div>   
+            </div>
         </div>
 
-        
+
 
         <div class="newLeft">
             <h2><span class="color">Свежие</span> новости
@@ -50,11 +50,13 @@
                 <div style="margin-top: 10px;">{{ $item->created_at->format('d.m.y') }}</div>
             </article>
             @endforeach
-             
-            
+
+
 
         </div>
 
     </div>
 
             </div>
+
+@endsection

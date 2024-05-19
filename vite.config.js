@@ -5,8 +5,10 @@ export default defineConfig({
     plugins: [
         laravel({
             input: ['resources/js/jquery-3.6.4.min.js',
-                'resources/scss/app.scss', 'resources/css/app.css',
+                'resources/css/app.css',
                 'resources/css/style.css',
+                'resources/scss/app.scss',
+
                 'resources/js/app.js',
                 'resources/js/anim.js',
                 'resources/js/hmain.js',

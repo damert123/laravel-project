@@ -42,7 +42,7 @@
         <div class="load__elem"></div>
     </div> -->
 
-
+    @yield('header')
     @yield('content')
     @yield('login')
     @yield('reg')
@@ -55,9 +55,14 @@
     @yield('profile')
     @yield('private')
     @yield('new')
-    @yield('footer')
     @yield('event-create')
     @yield('info-event')
+    @yield('news-create')
+    @yield('settings-event')
+
+
+
+    @yield('footer')
 
 
 
