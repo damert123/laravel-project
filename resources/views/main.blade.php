@@ -202,63 +202,6 @@
                 <p>Оказываем поддержку детям сиротам, воспитанникам детских домов, школ-интернатов и реабилитационным центрам.</p>
             </div>
         </div>
-
-        <div class="call-text container">
-            <h1>Стать <span style="color: #3F3E46;">волонтером</span></h1>
-        </div>
-        <div class="call-back container">
-
-            <div class="call-block">
-
-                <div class="call-input" placeholder="Имя Фамилия">
-                    <h2>Заполните форму</h2>
-                    <p>Имя </p>
-                    <input type="text" placeholder="Введите Имя ">
-
-                </div>
-
-                <div class="call-input">
-                    <p>Фамилия</p>
-                    <input type="text" placeholder="Введите Фамилия">
-                </div>
-
-                <div class="call-input">
-                    <p>Группа</p>
-                    <select name="" id="">
-                        <option value="">ИСиП-31</option>
-                        <option value="">ИСиП-32</option>
-                        <option value="">ИСиП-33</option>
-                        <option value="">ИСиП-21</option>
-                        <option value="">ИСиП-22</option>
-                        <option value="">ИСиП-11</option>
-                        <option value="">ИСиП-12</option>
-                    </select>
-                </div>
-
-                <div class="call-input">
-                    <p>Телефон</p>
-                    <input type="text" id="phone" placeholder="Введите номер телефона" oninput="formatPhoneNumber()" maxlength="18">
-                </div>
-                <div class="call-input">
-                    <p>Пароль</p>
-                    <input type="text" placeholder="Пароль">
-                </div>
-
-                <div class="call-input">
-                    <p>Email</p>
-                    <input type="text" placeholder="example@mail.ru">
-                </div>
-
-
-
-                <div class="btn-call">
-                    <button>Стать волонтером</button>
-                </div>
-            </div>
-
-        </div>
-
-
     </div>
 
     @endauth
