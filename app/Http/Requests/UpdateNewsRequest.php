@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class CreateNewsRequest extends FormRequest
+class UpdateNewsRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -26,7 +26,7 @@ class CreateNewsRequest extends FormRequest
             'header' => 'required|string|max:255|min:10',
             'members' => 'string|max:10',
             'descrip' => 'string|max:3000|min:20',
-            'picture' => 'required|image|mimes:jpeg,png,jpg,svg|max:2048',
+            'picture' => 'nullable|image|mimes:jpeg,png,jpg,svg|max:2048',
         ];
     }
 
@@ -42,7 +42,6 @@ class CreateNewsRequest extends FormRequest
             'descrip.string' => 'Некорректное описание',
             'descrip.max' => 'Описание превышает 3000 символов',
             'descrip.min' => 'Миимальная длина 10 символов',
-            'picture.required' => 'Добавьте изображение новости',
             'picture.mimes' => 'Недопустимый формат изображения',
             'picture.image' => 'Некорректное изображение',
             'picture.max' => 'Разрешение изображения превышает 2048 в ширину',

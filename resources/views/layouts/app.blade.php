@@ -52,13 +52,14 @@
     @yield('info')
     @yield('profile')
     @yield('members')
-    @yield('profile')
     @yield('private')
     @yield('new')
     @yield('event-create')
     @yield('info-event')
     @yield('news-create')
     @yield('settings-event')
+    @yield('edit')
+    @yield('edit-profile')
 
 
 

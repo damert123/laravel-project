@@ -137,6 +137,6 @@
     </div>
 
 
-
+@endsection
 
     @include('inc.footer')

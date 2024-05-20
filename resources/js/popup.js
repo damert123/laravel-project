@@ -15,7 +15,7 @@ $('.open-popup').click(function(e) {
     e.preventDefault();
     var eventId = $(this).data('event-id');
     var eventParticipants = participants[eventId];
-    
+
     // Очистить предыдущие данные
     $('.event-participants-list').empty();
 
@@ -54,8 +54,10 @@ $('.open-popup').click(function(e) {
 $('.delete-event').click(function(e) {
     e.preventDefault();
     var eventId = $(this).data('event-id');
+    var newsId = $(this).data('news-id');
     // Установка значения event-id для формы удаления
     $('#deleteEventForm').attr('action', '/admin/event/delete/' + eventId);
+    $('#deleteNewsForm').attr('action', '/admin/news/delete/' + newsId);
     $('.popup-bg-delete').fadeIn(200);
     $('html').addClass('no-scroll');
 });

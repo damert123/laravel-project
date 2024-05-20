@@ -29,6 +29,11 @@ class User extends Authenticatable
         return $this->belongsToMany(Event::class, 'event_user');
     }
 
+    public function profile()
+    {
+        return $this->hasOne(Profile::class);
+    }
+
 
     /**
      * The attributes that are mass assignable.
@@ -72,5 +77,5 @@ class User extends Authenticatable
         'password' => 'hashed',
     ];
 
-    
+
 }

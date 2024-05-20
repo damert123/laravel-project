@@ -86,6 +86,8 @@ Route::prefix('admin')->name('admin.')->group(function () {
         ->name('event.settings-event')
         ->middleware('auth', 'admin' );
 
+
+
     Route::delete('/event/delete/{id}', [EventController::class, 'deleteEvent'])
         ->name('event.delete')
         ->middleware('auth', 'admin');
@@ -119,6 +121,24 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::post('/event/event-create', [CreateEventController::class, 'store'])
         ->name('event.event-create-event')
         ->middleware('auth', 'admin' );
+
+    Route::get('/news/settings-news', [NewsController::class, 'showSettings'])
+        ->name('news.settings-news')
+        ->middleware('auth', 'admin' );
+
+    Route::get('/news/edit-news/{id}', [NewsController::class, 'editNews'])
+        ->name('news.edit-news')
+        ->middleware('auth', 'admin' );
+
+    Route::delete('/news/delete/{id}', [NewsController::class, 'deleteNews'])
+        ->name('news.delete')
+        ->middleware('auth', 'admin' );
+
+    Route::post('/news/edit-news/{id}', [NewsController::class, 'updateNews'])
+        ->name('news.update-news')
+        ->middleware('auth', 'admin' );
+
+
 });
 
 

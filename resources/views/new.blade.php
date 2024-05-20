@@ -45,9 +45,12 @@
             </h2>
             @foreach ($freshNews as $item)
             <article class="new_block">
+                <a href="{{route('new', $item->id)}}">
                 <img src="{{ asset ('storage/' . $item->picture) }}" alt="тут фотка новостей"><br>
+                </a>
                 <h3>{{$item->header}}</h3>
                 <div style="margin-top: 10px;">{{ $item->created_at->format('d.m.y') }}</div>
+
             </article>
             @endforeach
 
@@ -60,3 +63,5 @@
             </div>
 
 @endsection
+
+@include('inc.footer')

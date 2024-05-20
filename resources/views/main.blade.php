@@ -41,7 +41,7 @@
 
 
         </div>
-        <a class="btn_more" href="news.html">Читать больше</a>
+        <a class="btn_more" href="{{route('news')}}">Читать больше</a>
         <img src="" alt="">
     </div>
 

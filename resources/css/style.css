@@ -797,7 +797,7 @@ body {
 }
 
 .call-block {
-    width: 65%;
+    width: 80%;
     align-items: center;
     border-radius: 35px;
     box-shadow: 0 0px 10px rgba(0, 0, 0, 0.1);
@@ -818,12 +818,12 @@ body {
 
 .call-input input {
     width: 50%;
-    height: 50px;
+    height: 40px;
     border: 2px solid #d1d5db;
     border-radius: 10px;
     padding: 5px 10px;
     font-family: 'Montserrat', sans-serif;
-    box-shadow: 0 0px 5px rgba(0, 0, 0, 0.03);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.03);
     transition: border-color 0.3s ease;
 }
 
@@ -832,8 +832,8 @@ body {
 }
 
 .call-input select {
-    width: 50%;
-    height: 50px;
+    width: 54%;
+    height: 54px;
     border-color: #d1d5db;
     border-width: 2px;
     border-radius: 10px;
@@ -903,8 +903,8 @@ body {
     font-size: 40px;
     margin-bottom: 30px;
     font-weight: 600;
-    border-bottom: 2px solid #4e77f4;
-    line-height: 100px;
+
+    line-height: 50px;
     color: #3F3E46;
 }
 
@@ -915,17 +915,21 @@ body {
 }
 
 #image-gallery {
+    border-top: 2px solid #4e77f4;
     border-bottom: 2px solid #4e77f4;
 }
 
 #image-gallery li {
     text-align: center;
+    padding-top: 10px;
     width: 80%;
     margin: 0 auto;
 }
 
 #image-gallery li img {
     width: 90%;
+    height: 300px;
+    object-fit: cover;
     padding-bottom: 30px;
 }
 
@@ -998,18 +1002,25 @@ body {
     width: 25%;
     padding: 0 45px;
     padding-top: 10px;
-    background: white;
+
 }
 
 .newLeft .new_block img {
-    width: 100%;
+    width: 200px;
+    height: 150px;
+    object-fit: cover;
     margin-bottom: 10px;
     border-radius: 5px;
+
 }
 
 .newLeft .new_block {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     padding: 20px 30px;
-    border: 1px solid #4e77f4;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
     background: #fff;
     margin-bottom: 50px;
@@ -1145,9 +1156,7 @@ body {
 }
 
 @media screen and (max-width: 1024px) {
-    .container {
-        width: 95%;
-    }
+
 }
 
 @media screen and (max-width: 768px) {
@@ -1191,7 +1200,7 @@ body {
         font-size: 15px;
     }
     .call-input select {
-        width: 80%;
+        width: 87%;
     }
     .header .headerOne .logo .logoText p {
         display: none;
@@ -1369,14 +1378,14 @@ body {
 .profile-info-first {
     display: flex;
     flex-direction: column;
-    margin: 35px;
+    margin: 35px 35px 35px 10px;
 }
 
 .prfl-name input {
     width: 100%;
     font-size: 18px;
 
-    height: 44px;
+    height: 30px;
     border: 2px solid #4e77f4;
     border-radius: 5px;
     padding: 5px 10px;
@@ -1387,9 +1396,8 @@ body {
 }
 
 .prfl-name select {
-    width: 100%;
+    width: 110%;
     font-size: 18px;
-
     height: 44px;
     border: 2px solid #4e77f4;
     border-radius: 5px;
@@ -1593,7 +1601,7 @@ body {
     width: 100%;
     font-size: 18px;
     margin-bottom: 20px;
-    height: 44px;
+    height: 30px;
     border: 1px solid #d1d5db;
     border-radius: 5px;
     padding: 5px 10px;
@@ -1617,7 +1625,7 @@ body {
 .event-added-info input {
 
     width: 80%;
-    height: 45px;
+    height: 30px;
     border: 1px solid #d1d5db;
     border-radius: 5px;
     padding: 5px 10px;
@@ -2296,7 +2304,7 @@ body {
 
 .news-added-logo input {
     width: 80%;
-    height: 45px;
+    height: 30px;
     border: 1px solid #d1d5db;
     border-radius: 8px;
     padding: 8px 12px;
@@ -2307,7 +2315,7 @@ body {
 
 .news-added-logo input:focus{
     border-color: #4e77f4;
-    border: 2px solid #4e77f4;
+
 }
 
 
@@ -2329,7 +2337,7 @@ body {
 
 .news-added-description textarea:focus{
     border-color: #4e77f4;
-    border: 2px solid #4e77f4;
+
 }
 
 .news-added-info {
@@ -2340,7 +2348,7 @@ body {
 
 .news-added-info input {
     width: 10%;
-    height: 30px;
+    height: 20px;
     margin-left: 10px;
     border: 1px solid #d1d5db;
     border-radius: 5px;
@@ -2458,6 +2466,12 @@ body {
     }
     .profile-logo a p {
         display: none;
+    }
+    .block-border-login{
+        width: 70%;
+    }
+    .login-block h1{
+        font-size: 30px;
     }
 }
 
@@ -2637,13 +2651,14 @@ textarea.error-event {
     justify-content: space-around;
     align-items: center;
     margin-top: 15px;
+    gap: 10px;
 
 }
 
 .delete-confirm a{
     text-decoration: none;
     color: #fff;
-    padding: 15px;
+    padding: 14px;
     width: 70px;
     height: 21px;
     text-align: center;

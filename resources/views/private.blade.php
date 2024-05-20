@@ -47,7 +47,7 @@
                 <div class="member-admin">
                     <p><img src="" alt="">Админ</p>
                     <a href="{{route ('admin.event.settings-event')}}"><img src="" alt="">Мероприятия</a>
-                    <a href=""><img src="" alt="">Новости</a>
+                    <a href="{{route('admin.news.settings-news')}}"><img src="" alt="">Новости</a>
                 </div>
                @endif
         </div>

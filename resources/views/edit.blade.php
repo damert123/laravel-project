@@ -12,9 +12,9 @@
 
 
 
- 
 
-   
+
+
 
     <form action="{{ route('user.edit') }}" method="post" enctype="multipart/form-data">
         @csrf
@@ -24,12 +24,12 @@
                     <div class="profile-avatar">
                         <img id="avatarPreview" src="img/profile_logo.png" alt="Avatar preview">
                     </div>
-        
+
                     <label for="avatar"><img src="img/ei_plus.png" alt="">Загрузить фото</label> <!-- Используем лейбл вместо кнопки -->
                     <input type="file" id="avatar" name="avatar" class="custom-file-input" onchange="previewAvatar(event)"> <!-- Элемент input скрыт от пользователя -->
-                    
+
                     <button type="submit"><img src="img/uil_pen.png" alt=""> Сохранить</button>
-                   
+
                 </div>
 
                 <div class="profile-block-info">
@@ -56,7 +56,7 @@
                                 <div class="error-message">{{$message}}</div>
                                 @enderror
                             </div>
-                            
+
                         </div>
 
                         <div class="profile-info-first">
@@ -74,7 +74,7 @@
                                 @error('date')
                                 <div class="error-message">{{$message}}</div>
                                 @enderror
-                                
+
                             </div>
                             <div class="prfl-name">
                                 <p>Группа</p>
@@ -100,7 +100,7 @@
                         </div>
                     </div>
                     <div class="profile-about" >
-                  
+
                         <p>О себе</p>
                         <textarea  class="{{ $errors->has('about') ? 'error textarea' : 'gray' }}" type="text" value="{{ $user->about }}" name="about" id="about" cols="30" rows="10" >{{ $user->about }}</textarea>
                         @error('about')
@@ -121,7 +121,7 @@
     </form>
 
 
-    
+
 
 
 
@@ -200,6 +200,8 @@ textareas.forEach((textarea) => {
     });
 });
 </script>
+
+@endsection
 
 @include('inc.footer')
 

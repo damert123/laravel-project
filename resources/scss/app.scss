@@ -539,13 +539,13 @@ body.loaded .loading-spinner {
                        h2{
                            margin-bottom: 10px;
                            font-weight: 500;
+                           display: flex;
+                           align-items: center;
                            img{
-                               position: absolute;
                                width: 30px;
-                               left: -25px; /* Размещаем изображение чуть справа от текста */
-                               top: -3;
                                pointer-events: none;
                                user-select: none;
+                               margin-right: 3px;
 
                            }
                        }
@@ -564,13 +564,14 @@ body.loaded .loading-spinner {
                        h2{
                            margin-bottom: 10px;
                            font-weight: 500;
+                           display: flex;
+                           align-items: center;
                            img{
-                               position: absolute;
+
                                width: 30px;
-                               left: 20px; /* Размещаем изображение чуть справа от текста */
-                               top: -3;
                                pointer-events: none;
                                user-select: none;
+                               margin-right: 3px;
 
                            }
                        }
@@ -588,7 +589,8 @@ body.loaded .loading-spinner {
             border-radius: 15px;
 
             textarea{
-                width: 100%;
+                width: 95%;
+
                 margin-bottom: 20px;
                 height: 50%;
                 border: 1px solid #3498db;
@@ -833,6 +835,8 @@ body.loaded .loading-spinner {
         .admin-edit-data{
             display: flex;
             flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
 
             .input-width{
                 width: 245px;
@@ -846,7 +850,7 @@ body.loaded .loading-spinner {
                     width: 100%;
                     font-size: 18px;
                     margin-bottom: 20px;
-                    height: 44px;
+                    height: 30px;
                     border: 2px solid #4e77f4;
                     border-radius: 5px;
                     padding: 5px 10px;
@@ -854,7 +858,7 @@ body.loaded .loading-spinner {
 
                 }
                 select{
-                    width: 100%;
+                    width: 110%;
                     font-size: 18px;
                     margin-bottom: 20px;
                     height: 44px;
@@ -876,7 +880,7 @@ body.loaded .loading-spinner {
             flex-direction: column;
             justify-content: center;
             textarea{
-                width: 450px;
+                width: 300px;
                 margin-bottom: 20px;
                 height: 50%;
                 background: #fff;
@@ -886,6 +890,7 @@ body.loaded .loading-spinner {
                 box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
                 font-family: "Montserrat", sans-serif;
                 cursor: default;
+                border: 2px solid #3D67FF;
             }
         }
     }
@@ -962,6 +967,24 @@ body.loaded .loading-spinner {
                 background-color: #3498db;
             }
         }
+    }
+}
+
+
+@media (max-width: 400px){
+    .admin-edit-block .admin-edit-info .admin-input-role select{
+
+    }
+    .admin-edit-block .admin-edit-input .admin-edit-data .input-width select{
+        width: 100%;
+    }
+
+    .admin-edit-block .admin-edit-input .admin-edit-data .input-width input{
+        width: 90%;
+    }
+
+    .admin-edit-block .admin-edit-input .member-about textarea{
+        width: 250px;
     }
 }
 

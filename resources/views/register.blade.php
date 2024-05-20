@@ -86,7 +86,7 @@
                     </div>
 
                     <div class="not-reg">
-                    <a href="login.php">Я меня уже есть аккаунт</a>
+                    <a href="{{route('user.login')}}">Я меня уже есть аккаунт</a>
                 </div>
 
 
@@ -134,4 +134,6 @@
    </script>
 
 @endsection
+
+@include('inc.footer')
 

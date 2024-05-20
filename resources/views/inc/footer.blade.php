@@ -5,7 +5,7 @@
 
             <div class="footer-item">
                 <div class="tel">
-                    <img src="img/phone.png" alt="" srcset="">
+                    <img src="{{'storage/ '}}" alt="" srcset="">
                     <a href="">+7 (900)-555-35-35</a>
                 </div>
                 <div class="tel">
