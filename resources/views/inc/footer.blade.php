@@ -5,11 +5,11 @@
 
             <div class="footer-item">
                 <div class="tel">
-                    <img src="{{'storage/ '}}" alt="" srcset="">
+                    <img src="{{asset('img/phone.png')}}" alt="" srcset="">
                     <a href="">+7 (900)-555-35-35</a>
                 </div>
                 <div class="tel">
-                    <img src="img/email.png" alt="" srcset="">
+                    <img src="{{asset('img/email.png')}}" alt="" srcset="">
                     <a href="">example@yandex.ru</a>
                 </div>
 
@@ -27,12 +27,12 @@
 
             <div class="footer-item">
                 <div class="tel">
-                    <img src="img/location.png" alt="" srcset="">
+                    <img src="{{asset('img/location.png')}}" alt="" srcset="">
                     <a href="">ул. Мурысева, 84, Тольятти</a>
                 </div>
 
                 <div class="tel">
-                    <img src="img/vk.png" alt="" srcset="">
+                    <img src="{{asset('img/vk.png')}}" alt="" srcset="">
                     <a href="">Группа ВК</a>
                 </div>
             </div>

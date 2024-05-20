@@ -79,7 +79,7 @@
     @else
 
 
-        <div style="text-align: center; padding: 10px; font-weight: 600; background-color: #f4f14e; color: #3F3E46">Нет действующих мероприятий</div>
+        <div style="text-align: center; padding: 10px; font-weight: 600; background-color: #f4f14e; color: #3F3E46">Нет новостей</div>
 
 
     @endif

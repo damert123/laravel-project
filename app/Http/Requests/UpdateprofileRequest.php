@@ -31,7 +31,7 @@ class UpdateprofileRequest extends FormRequest
             'about' => 'nullable|string|max:1000',
             'email' => 'required|string|email|max:255|unique:users,email,' . auth()->id(),
             'avatar' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
-            
+
         ];
     }
 
@@ -39,7 +39,7 @@ class UpdateprofileRequest extends FormRequest
         return[
             'name.required' => 'Заполните фамилия',
             'name.regex' => 'Имя содержит цифры',
-            'name.min' => 'Минимальная длина поля Имя 2 символа',
+            'name.min' => 'Минимальная длина 2 символа',
             'name.max' => 'Поле превышает 50 символов',
             'name.string' => 'Некорректное Имя',
             'email.required' => 'Вы не заполнили email',
@@ -51,7 +51,7 @@ class UpdateprofileRequest extends FormRequest
             'groupp.required' => 'Выберите группу',
             'date.required' => 'Введите дату рождения',
             'second_name.required' => 'Заполните поле Фамилия',
-            'second_name.min' => 'Минимальная длина поля Фамилия 2 символа',
+            'second_name.min' => 'Минимальная длина 2 символа',
             'second_name.max' => 'Поле превышает 50 символов',
             'second_name.regex' => 'Фамилия содержит цифры',
             'second_name.string' => 'Некорректная Фамилия',

@@ -37,21 +37,21 @@
                         <div class="profile-info-first">
                             <div class="prfl-name">
                                 <p>Имя</p>
-                                <input name="name" class="{{ $errors->has('name') ? 'error input' : 'gray' }}" type="text" value="{{ $user->name }}">
+                                <input name="name" class="{{ $errors->has('name') ? 'error input' : 'gray' }}" type="text" value="{{ old('name') ?? $user->name }}">
                                 @error('name')
                                 <div class="error-message">{{$message}}</div>
                                 @enderror
                             </div>
                             <div class="prfl-name">
                                 <p>Телефон</p>
-                                <input name="phone" class="{{ $errors->has('phone') ? 'error input' : 'gray' }}" type="text" id="phone" oninput="formatPhoneNumber()" maxlength="18" value="{{ $user->phone }}">
+                                <input name="phone" class="{{ $errors->has('phone') ? 'error input' : 'gray' }}" type="text" id="phone" oninput="formatPhoneNumber()" maxlength="18" value="{{ old('phone') ?? $user->phone }}">
                                 @error('phone')
                                 <div class="error-message">{{$message}}</div>
                                 @enderror
                             </div>
                             <div class="prfl-name">
                                 <p>Email</p>
-                                <input name="email" class="{{ $errors->has('email') ? 'error input' : 'gray' }} " type="text" value="{{ $user->email }}">
+                                <input name="email" class="{{ $errors->has('email') ? 'error input' : 'gray' }} " type="text" value="{{ old('email') ?? $user->email }}">
                                 @error('email')
                                 <div class="error-message">{{$message}}</div>
                                 @enderror
@@ -62,7 +62,7 @@
                         <div class="profile-info-first">
                             <div class="prfl-name">
                                 <p>Фамилия</p>
-                                <input   name="second_name" class="{{ $errors->has('second_name') ? 'error input' : 'gray' }} "   type="text" value="{{ $user->second_name }}">
+                                <input   name="second_name" class="{{ $errors->has('second_name') ? 'error input' : 'gray' }} "   type="text" value="{{ old('second_name') ?? $user->second_name }}">
                                 @error('second_name')
                                 <div class="error-message">{{$message}}</div>
                                 @enderror
