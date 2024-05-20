@@ -29,7 +29,7 @@
                                     @if($user->avatar)
                                         <img src="{{ asset('storage/' . $user->avatar) }}" style="width: 50px; border-radius: 50%;" alt="">
                                     @else
-                                        <img src="img/group.png" style="width: 50px; border-radius: 50%;" alt="Default Avatar">
+                                        <img src="{{asset('img/group.png')}}" style="width: 50px; border-radius: 50%;" alt="Default Avatar">
                                     @endif
                                 </div>
                                 {{ $user->name }} {{ $user->second_name }}</td>
