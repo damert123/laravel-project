@@ -1980,6 +1980,7 @@ body {
 @media screen and (max-width: 1440px) {
     .event-logo-text img {
         width: 300px;
+        height: 300px;
     }
 }
 
@@ -2001,6 +2002,7 @@ body {
 @media screen and (max-width: 480px) {
     .event-logo-text img {
         width: 200px;
+        height: 200px;
     }
     .info-event {
         width: 90%;
