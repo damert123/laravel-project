@@ -14,23 +14,19 @@
         <h1 class='anim_items' style="margin-bottom: 10px;">Добавить новость</h1>
 
         <div class="news-backgr">
-            @if($errors->any())
-            <ul>
-                @foreach($errors->all() as $error)
-                <li>{{ $error }}</li>
-                @endforeach
-            </ul>
 
-            @endif
 
             <div class="news-flex">
                 <div class="news-added-img">
                     <p>Загрузить картинку</p>
-                    <img id="preview-image" src="#" alt="Preview Image" >
+                    <img id="preview-image" src="#" alt="Preview Image" class="@error('picture') error-event @enderror">
                     <label class="custom-file-upload" for="image_news">
-                    <input type="file" name="picture" id="image_news" onchange="previewAvatar(event)">Добавить
+                    <input type="file" name="picture" id="image_news" onchange="previewAvatar(event)" >Добавить
                     </label>
                     <p id="file-name" style="margin-top: 10px;"></p>
+                    @error('picture')
+                    <div class="error-message">{{$message}}</div>
+                    @enderror
                 </div>
 
             </div>
@@ -40,16 +36,25 @@
 
                 <div class="news-added-logo" style="margin-top: 20px">
                     <p>Заголовок новости</p>
-                    <input name="header" type="text">
+                    <input name="header" type="text" value="{{old('header')}}" class="@error('header') error-event @enderror">
+                    @error('header')
+                    <div class="error-message">{{$message}}</div>
+                    @enderror
                 </div>
 
                 <div class="news-added-description">
                     <p>Описание новости</p>
-                    <textarea name="descrip" ></textarea>
+                    <textarea name="descrip"  class="@error('descrip') error-event @enderror">{{old('descrip')}}</textarea>
+                    @error('descrip')
+                    <div class="error-message">{{$message}}</div>
+                    @enderror
                 </div>
                 <div class="news-added-info">
                     <p style="margin: 0">Участвовало волонтеров</p>
-                    <input name="members" type="number">
+                    <input name="members" type="number" class="@error('members') error-event @enderror">
+                    @error('members')
+                    <div class="error-message">{{$message}}</div>
+                    @enderror
                 </div>
                 <div class="btn-send-news" style="margin-bottom: 20px">
                     <button type="submit">Опубликовать новость</button>

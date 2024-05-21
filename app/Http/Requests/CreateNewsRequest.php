@@ -24,8 +24,8 @@ class CreateNewsRequest extends FormRequest
         return [
 
             'header' => 'required|string|max:255|min:10',
-            'members' => 'string|max:10',
-            'descrip' => 'string|max:3000|min:20',
+            'members' => 'nullable|integer|max:10',
+            'descrip' => 'required|string|max:3000|min:20',
             'picture' => 'required|image|mimes:jpeg,png,jpg,svg|max:2048',
         ];
     }
@@ -37,8 +37,9 @@ class CreateNewsRequest extends FormRequest
             'header.string' => 'Некорректный заголовок',
             'header.max' => 'Заголовок превышает 255 символов.',
             'header.min' => 'Минимальная длина 10 символов',
-            'members.string' => 'Некорректное значение',
+            'members.integer' => 'Некорректное значение',
             'members.max' => 'Максимальная длина Участников 10 символов',
+            'descrip.required' => 'Заполните описание',
             'descrip.string' => 'Некорректное описание',
             'descrip.max' => 'Описание превышает 3000 символов',
             'descrip.min' => 'Миимальная длина 10 символов',

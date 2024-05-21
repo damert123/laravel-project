@@ -70,14 +70,14 @@
                         <div class="admin-edit-data">
                             <div class="input-width">
                                 <p>Имя</p>
-                                <input type="text" name="name" value="{{ $user->name }}">
+                                <input type="text" class="@error('name') error-event @enderror" name="name" value="{{ old('name') ?? $user->name }}" >
                                 @error('name')
                                 <div class="error-message">{{$message}}</div>
                                 @enderror
                             </div>
                             <div class="input-width">
                                 <p>Фамилия</p>
-                                <input type="text" name="second_name" value="{{ $user->second_name }}">
+                                <input type="text" name="second_name" value="{{ old('second_name') ?? $user->second_name }}">
                                 @error('second_name')
                                 <div class="error-message">{{$message}}</div>
                                 @enderror
@@ -87,7 +87,7 @@
                         <div class="admin-edit-data">
                             <div class="input-width">
                                 <p>Телефон</p>
-                                <input type="text" name="phone" id="phone" oninput="formatPhoneNumber()" maxlength="18" value="{{ $user->phone }}">
+                                <input type="text" name="phone" id="phone" oninput="formatPhoneNumber()" maxlength="18" value="{{ old('phone') ?? $user->phone }}">
                                 @error('phone')
                                 <div class="error-message">{{$message}}</div>
                                 @enderror
@@ -102,7 +102,7 @@
                         </div>
 
                         <div class="admin-edit-data">
-                            <div class="input-width"">
+                            <div class="input-width">
                             <p>Email</p>
                             <input type="text" name="email" value="{{ $user->email }}">
                             @error('email')
@@ -140,7 +140,7 @@
                 </div>
 
 
-
+                </div>
 
             </form>
         </div>

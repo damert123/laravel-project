@@ -2283,6 +2283,16 @@ body {
     border: 2px solid #4e77f4;
 }
 
+.news-added-img img.error-event{
+    border-color: #ff6a6a;
+}
+
+.admin-edit-block .admin-edit-input .admin-edit-data .input-width input.error-event{
+    border-color: #ff6a6a;
+}
+
+
+
 .news-added-img input {
     width: 80%;
     text-align: center;
@@ -2545,6 +2555,8 @@ input.error-event {
 textarea.error-event {
     border-color: #ff6a6a;
 }
+
+
 
 
 
