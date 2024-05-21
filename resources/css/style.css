@@ -1296,7 +1296,7 @@ body {
     padding: 6px 0px;
     align-items: center;
     font-weight: 600;
-    width: 100%;
+    width: 80%;
     text-align: center;
     border: none;
     font-family: 'Montserrat', sans-serif;
@@ -1315,7 +1315,7 @@ body {
     padding: 10px 15px;
     align-items: center;
     font-weight: 600;
-    width: 100%;
+    width: 80%;
     text-align: center;
     border: none;
     font-family: 'Montserrat', sans-serif;
@@ -1380,6 +1380,12 @@ body {
     flex-direction: column;
     margin: 35px 35px 35px 10px;
 }
+
+
+
+
+
+
 
 .prfl-name input {
     width: 100%;
@@ -2148,6 +2154,10 @@ body {
 
 .prfl-name input.error {
     border: 2px solid #ff6a6a;
+}
+
+.social_add_block .social_input input.error{
+    border: 1px solid #ff6a6a;
 }
 
 .prfl-name select.gray {

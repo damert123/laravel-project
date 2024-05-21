@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Event;
 use Carbon\Carbon;
 use App\Http\Requests\CreateEventRequest;
+use App\Models\User;
 
 class EventController extends Controller
 {
@@ -13,10 +14,15 @@ class EventController extends Controller
     {
         // Получаем все новости из базы данных
 
-        $event = Event::latest()->get();
+        $eventQuery = Event::query();
+
+        $event = $eventQuery->paginate(3);
+
+        $user = auth()->user();
+
 
         // Передаем данные новостей в представление
-        return view('event', compact('event'));
+        return view('event', compact('event', 'user'));
     }
 
     public function showSettings()

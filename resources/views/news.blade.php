@@ -19,9 +19,11 @@
                     <h1 class='anim_items'><span class="color">Все</span> новости</h1>
 
                 </div>
+                @if($user->role == \App\Models\User::ROLE_ADMIN)
                 <div class="news-added">
                     <a href="{{ route('admin.news.news-create') }}"><img src="{{asset ('img/plus.svg')}}" alt="" style="margin-right: 5px;">Добавить новость</a>
                 </div>
+                @endif
             </div>
 
 
@@ -31,7 +33,7 @@
                     <article class="new_block">
 
                         <a href="{{route ('new', $item->id)}}">
-                            <img src="{{ asset ('storage/' . $item->picture) }}" class="logo-news" alt="тут фотка новостей";">
+                            <img src="{{ asset ('storage/' . $item->picture) }}" class="logo-news" alt="тут фотка новостей">
                         </a>
                         <h3>{{ $item->header }}</h3>
 

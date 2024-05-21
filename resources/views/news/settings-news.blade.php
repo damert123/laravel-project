@@ -61,7 +61,7 @@
         <div class="block-members-event popup">
             <img class="close-popup-delete" src="{{ asset('img/close.svg') }}" alt="icon">
             <div class="members-event-popup">
-                <h2 style="margin:50px 0 20px 0; text-align: center;">Удалить мероприятие?</h2>
+                <h2 style="margin:50px 0 20px 0; text-align: center;">Удалить новость?</h2>
 
                 <div class="delete-confirm">
                     <a href="#" class="cancel-delete">Нет</a>

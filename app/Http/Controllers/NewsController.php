@@ -7,6 +7,7 @@ use App\Http\Requests\UpdateNewsRequest;
 use Illuminate\Http\Request;
 use App\Models\News;
 use Illuminate\Support\Facades\Auth;
+use App\Models\User;
 
 
 class NewsController extends Controller
@@ -19,8 +20,10 @@ class NewsController extends Controller
 
        $news = $newsQuery->paginate(6);
 
+       $user = auth()->user();
+
        // Передаем данные пользователей в представление
-       return view('news', compact('news'));
+       return view('news', compact('news', 'user'));
    }
 
    public function open($id)

@@ -11,7 +11,11 @@
 
 
 
-
+    @if(session('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div>
+    @endif
 
 
         <div class="container">
@@ -63,13 +67,20 @@
 
                 </div>
 
+
+                @if($profile->social_vk != null || $profile->social_tg != null)
                 <div class="member-social">
                 <p><img src="" alt="">Соц-сети</p>
                     <div class="member-social-img">
-                        <a href=""><img src="{{ asset('img/memb_vk.svg') }}" alt="" style="margin-right:10px;"></a>
-                        <a href=""><img src="{{ asset('img/telegram.svg') }}" alt=""></a>
+                        @if($profile->social_vk != null)
+                        <a href="{{$profile->social_vk}}"><img src="{{ asset('img/memb_vk.svg') }}" alt="" style="margin-right:10px;"></a>
+                        @endif
+                        @if($profile->social_tg != null)
+                        <a href="{{$profile->social_tg}}"><img src="{{ asset('img/telegram.svg') }}" alt=""></a>
+                            @endif
                     </div>
                 </div>
+                @endif
             </div>
 
 

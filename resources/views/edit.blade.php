@@ -30,6 +30,28 @@
 
                     <button type="submit"><img src="img/uil_pen.png" alt=""> Сохранить</button>
 
+                    <div class="social_add_block">
+                        <h2>Добавить соц-сеть</h2>
+                        <div class="social_input">
+                            <img src="{{asset('img/vk.png')}}" alt="" >
+                            <input name="social_vk" class="{{ $errors->has('social_vk') ? 'error input' : 'gray' }}" type="text" placeholder="https://vk.com/"  value="{{$profile->social_vk}}">
+
+                        </div>
+                        @if ($errors->has('social_vk'))
+                            <span class="error-message">{{ $errors->first('social_vk') }}</span>
+                        @endif
+
+                        <div class="social_input">
+                            <img src="{{asset('img/telegram.svg')}}" alt="">
+                            <input name="social_tg" class="{{ $errors->has('social_tg') ? 'error input' : 'gray' }} " type="text" placeholder="https://t.me/" value="{{$profile->social_tg}}">
+                        </div>
+                        @if ($errors->has('social_tg'))
+                            <span class="error-message">{{ $errors->first('social_tg') }}</span>
+                        @endif
+
+
+                    </div>
+
                 </div>
 
                 <div class="profile-block-info">

@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use App\Rules\SocialUrl;
 use Illuminate\Foundation\Http\FormRequest;
 
 
@@ -31,13 +32,16 @@ class UpdateprofileRequest extends FormRequest
             'about' => 'nullable|string|max:1000',
             'email' => 'required|string|email|max:255|unique:users,email,' . auth()->id(),
             'avatar' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
+            'social_vk' => ['nullable', 'url'],
+            'social_tg' => ['nullable', 'url' ],
 
         ];
     }
 
      public function messages(){
         return[
-            'name.required' => 'Заполните фамилия',
+            'social_vk.url' => 'Неправильная ссылка',
+            'name.required' => 'Заполните Имя',
             'name.regex' => 'Имя содержит цифры',
             'name.min' => 'Минимальная длина 2 символа',
             'name.max' => 'Поле превышает 50 символов',

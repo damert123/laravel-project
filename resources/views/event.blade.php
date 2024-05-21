@@ -24,11 +24,13 @@
                     <h1 class="anim_items activee">Мероприятия</h1>
                     <h2 class="anim_items ">Актуальные мероприятия</h2>
                 </div>
+                @if($user->role == \App\Models\User::ROLE_ADMIN)
                 <a href="{{ route('admin.event.event-create') }}"><img src="{{asset ('img/plus.svg')}}" alt=""
                                                                        style="margin-right: 5px;">Создать
                     Мероприятие</a>
-
+                @endif
             </div>
+
             <div class="event-items">
                 @foreach($event as $item)
                     <article>
@@ -58,7 +60,7 @@
                     </article>
                 @endforeach
 
-
+                    <div class="my-nav container">{{$event->withQueryString()->links('pagination::bootstrap-4')}}</div>
             </div>
         </div>
     </div>
