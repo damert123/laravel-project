@@ -126,7 +126,7 @@
                     <p>Вступайте в волонтерский отряд <br>«Добро=Счастье»</p>
                 </div>
                 <div class="main-action-btn">
-                    <a href="">Стать волонтером!</a>
+                    <a href="{{route('user.register')}}">Стать волонтером!</a>
                 </div>
             </div>
         </div>
