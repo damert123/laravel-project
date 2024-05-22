@@ -2556,6 +2556,10 @@ textarea.error-event {
     border-color: #ff6a6a;
 }
 
+select.error-event{
+    border-color: #ff6a6a;
+}
+
 
 
 

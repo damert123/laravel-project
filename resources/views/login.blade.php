@@ -9,20 +9,22 @@
         <img src="img/Tspk-logo.png" class="login-logo" alt="">
         <h1>Добро=Счастье</h1>
         <div class="block-border-login">
-        @if($errors->any())
-            <ul>
-                @foreach($errors->all() as $error)
-                <li>{{ $error }}</li>
-                @endforeach
-            </ul>
 
-            @endif
             <form action="{{ route('user.login') }}" method="post">
+
+
                 @csrf
                 <h2>Вход</h2>
 
 
+                @if($errors->any())
+                    <ul style="text-align: center; margin-bottom: 20px; color: #ff6a6a ">
+                        @foreach($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
 
+                @endif
 
                 <div class="login-imp">
                     <p>Почта</p>

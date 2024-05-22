@@ -19,7 +19,7 @@
                     <h1 class='anim_items'><span class="color">Все</span> новости</h1>
 
                 </div>
-                @if($user->role == \App\Models\User::ROLE_ADMIN)
+                @if(auth()->check() && auth()->user()->role == \App\Models\User::ROLE_ADMIN)
                 <div class="news-added">
                     <a href="{{ route('admin.news.news-create') }}"><img src="{{asset ('img/plus.svg')}}" alt="" style="margin-right: 5px;">Добавить новость</a>
                 </div>

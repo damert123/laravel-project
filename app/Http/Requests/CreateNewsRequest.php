@@ -22,9 +22,8 @@ class CreateNewsRequest extends FormRequest
     public function rules(): array
     {
         return [
-
             'header' => 'required|string|max:255|min:10',
-            'members' => 'nullable|integer|max:10',
+            'members' => 'nullable|integer|max:1000',
             'descrip' => 'required|string|max:3000|min:20',
             'picture' => 'required|image|mimes:jpeg,png,jpg,svg|max:2048',
         ];

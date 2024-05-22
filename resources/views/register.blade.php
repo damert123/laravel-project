@@ -12,34 +12,31 @@
         <img src="img/Tspk-logo.png" class="login-logo" alt="">
         <h1>Добро=Счастье</h1>
         <div class="call-back container">
-            @if($errors->any())
-            <ul>
-                @foreach($errors->all() as $error)
-                <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-
-            @endif
 
             <div class="call-block" >
                 <form action="{{ route('user.register') }}"  method="post">
                     @csrf
-                    <div class="call-input" placeholder="Имя Фамилия">
+                    <div class="call-input" >
                         <h2>Регистрация</h2>
                         <p>Имя </p>
-                        <input type="text" name="name" placeholder="Введите Имя ">
-
+                        <input type="text" class="@error('name') error-event @enderror" name="name" placeholder="Введите Имя " value="{{ old('name')}}">
+                        @error('name')
+                        <div class="error-message">{{$message}}</div>
+                        @enderror
                     </div>
 
                     <div class="call-input">
                         <p>Фамилия</p>
-                        <input type="text" name="second_name"  placeholder="Введите Фамилия">
+                        <input type="text" name="second_name" class="@error('second_name') error-event @enderror" placeholder="Введите Фамилия" value="{{ old('second_name')}}">
+                        @error('second_name')
+                        <div class="error-message">{{$message}}</div>
+                        @enderror
 
                     </div>
 
                     <div class="call-input">
                         <p>Группа</p>
-                        <select name="groupp" id="groupp">
+                        <select name="groupp" id="groupp" class="@error('groupp') error-event @enderror">
                                             <option value="">Выберите группу</option>
                                             <option value="ИСиП-41">ИСиП-41</option>
 											<option value="ИСиП-42">ИСиП-42</option>
@@ -52,30 +49,44 @@
 											<option value="ИСиП-11">ИСиП-11</option>
 											<option value="ИСиП-12">ИСиП-12</option>
 									</select>
+                        @error('groupp')
+                        <div class="error-message">{{$message}}</div>
+                        @enderror
 
                     </div>
 
                     <div class="call-input">
                         <p>Дата рождения</p>
-                        <input type="date" id="date" name="date" style="font-size: 18px;">
-
+                        <input type="date" class="@error('groupp') error-event @enderror" id="date" name="date" style="font-size: 18px;" value="{{ old('date')}}">
+                        @error('date')
+                        <div class="error-message">{{$message}}</div>
+                        @enderror
                     </div>
 
                     <div class="call-input ">
                         <p>Телефон</p>
-                        <input name="phone" type="text" id="phone" placeholder="Введите номер телефона" oninput="formatPhoneNumber()" maxlength="18">
+                        <input name="phone" class="@error('groupp') error-event @enderror" value="{{ old('phone')}}" type="text" id="phone" placeholder="Введите номер телефона" oninput="formatPhoneNumber()" maxlength="18">
+                        @error('phone')
+                        <div class="error-message">{{$message}}</div>
+                        @enderror
 
                     </div>
 
                     <div class="call-input">
                         <p>Пароль</p>
-                        <input name="pass" id="pass" type="password" placeholder="Пароль">
+                        <input name="pass" id="pass" type="password" placeholder="Пароль" class="@error('pass') error-event @enderror">
+                        @error('pass')
+                        <div class="error-message">{{$message}}</div>
+                        @enderror
 
                     </div>
 
                     <div class="call-input">
                         <p>Email</p>
-                        <input name="email" id="email" type="text" placeholder="example@mail.ru">
+                        <input name="email" class="@error('pass') error-event @enderror" id="email" type="text" placeholder="example@mail.ru" value="{{ old('email')}}">
+                        @error('email')
+                        <div class="error-message">{{$message}}</div>
+                        @enderror
 
                     </div>
 
