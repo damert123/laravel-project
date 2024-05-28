@@ -1237,10 +1237,10 @@ body {
 
 .profile-block {
     margin-top: 50px;
-    border: 2px solid #4e77f4;
+
     border-radius: 10px;
     margin-bottom: 100px;
-    background-color: #fbfbfb;
+
 }
 
 .profile-main {
@@ -1248,7 +1248,10 @@ body {
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
-    box-shadow: 0 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
 
 }
 
@@ -2588,6 +2591,27 @@ select.error-event{
     display: none;
 }
 
+
+.popup-bg-soft-delete {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+}
+
+
+.close-popup-soft-delete{
+    position: absolute;
+    top: 30px;
+    right: 35px;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+}
+
 .popup {
     position: absolute;
     top: 50%;
@@ -2614,6 +2638,15 @@ select.error-event{
 }
 
 .close-popup-delete {
+    position: absolute;
+    top: 30px;
+    right: 35px;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+}
+
+.close-popup-softdelete {
     position: absolute;
     top: 30px;
     right: 35px;

@@ -29,7 +29,13 @@ class EventController extends Controller
     {
         // Получаем все новости из базы данных
 
-        $events = Event::latest()->get();
+
+
+        $eventQuery = Event::query()->latest();
+
+        $events = $eventQuery->paginate(5);
+
+
 
         $participants = [];
 
@@ -48,6 +54,13 @@ class EventController extends Controller
     public function open($id)
     {
         $event = Event::findOrFail($id);
+
+        $event->formatted_date_start = Carbon::parse($event->date_start)->translatedFormat('d F');
+        $event->formatted_date_end = Carbon::parse($event->date_end)->translatedFormat('d F');
+        $event->formatted_time_start = Carbon::parse($event->time_start)->format('H:i');
+        $event->formatted_time_end = Carbon::parse($event->time_end)->format('H:i');
+
+
 
         $participants = $event->users;
 
@@ -85,10 +98,19 @@ class EventController extends Controller
     public function deleteEvent(Request $request, $id)
     {
         $event = Event::findOrFail($id);
-        $event->delete();
+        $event->forceDelete();
 
         // После удаления мероприятия перенаправляем пользователя обратно на страницу настроек мероприятий
         return redirect()->route('admin.event.settings-event')->with('success', 'Мероприятие успешно удалено');
+    }
+
+    public function softDeleteEvent(Request $request, $id)
+    {
+        $event = Event::findOrFail($id);
+        $event->delete();
+
+        return redirect()->route('admin.event.settings-event')->with('success', 'Мероприятеи успешно завершилось');
+
     }
 
 

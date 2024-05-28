@@ -43,11 +43,14 @@ $('.open-popup').click(function(e) {
     });
 });
 
-
-
-
-
-
+$('.soft-delete-event').click(function(e) {
+    e.preventDefault();
+    var eventId = $(this).data('event-id');
+    // Установка значения event-id для формы удаления
+    $('#softDeleteEventForm').attr('action', '/admin/event/soft-delete/' + eventId);
+    $('.popup-bg-soft-delete').fadeIn(200);
+    $('html').addClass('no-scroll');
+});
 
 
 
@@ -68,4 +71,10 @@ $('.close-popup-delete, .cancel-delete').click(function() {
     $('html').removeClass('no-scroll');
 });
 
+
+$('.close-popup-soft-delete, .cancel-soft-delete').click(function() {
+
+    $('.popup-bg-soft-delete').fadeOut(100);
+    $('html').removeClass('no-scroll');
+});
 

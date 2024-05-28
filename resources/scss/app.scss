@@ -99,7 +99,7 @@ body.loaded .loading-spinner {
     }
 
     tbody{
-
+        background-color: #fff;
 
         tr{
             transition: all .3s;
@@ -204,7 +204,7 @@ body.loaded .loading-spinner {
 
     .tb_members thead {
         float: left;
-        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+
     }
 
     .tb_members thead th:first-child {
@@ -221,8 +221,11 @@ body.loaded .loading-spinner {
         height: 104px;
     }
 
-    .tb_members tbody tr td:last-child {
-        margin-bottom: 5px;
+    .tb_members tbody tr td:last-child  {
+
+    }
+    .tb_events tbody tr td:last-child{
+
     }
 
     .tb_members thead th {
@@ -744,14 +747,14 @@ body.loaded .loading-spinner {
 
 
 .admin-edit-block{
-    border: 2px solid #4e77f4;
+
     border-radius: 11px;
     margin-top: 35px;
     padding: 20px;
     display: flex;
     justify-content: space-around;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    background-color: #fbfbfb;
+    background-color: #fff;
     flex-wrap: wrap;
     margin-bottom: 100px;
 
@@ -1248,7 +1251,7 @@ body.loaded .loading-spinner {
     border: 2px solid #4e77f4;
     border-radius: 5px;
     margin-top: 3rem;
-    background-color: #fff;
+    background-color: #4e77f4;
 
     .table-flex{
         overflow-x: auto;
@@ -1258,6 +1261,7 @@ body.loaded .loading-spinner {
 .tb_events{
     width: 100%;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    background-color: #4e77f4 ;
     thead{
         tr{
            th{
@@ -1273,12 +1277,15 @@ body.loaded .loading-spinner {
     }
 
     tbody{
+        background-color: #fff;
         tr{
             transition: all .3s;
             td{
                 text-align: center;
                 padding: 20px;
                 vertical-align: middle;
+                width: 200px;
+
 
                 a{
                     display: flex;
@@ -1367,7 +1374,7 @@ body.loaded .loading-spinner {
 
     .tb_events thead {
         float: left;
-        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+
     }
 
     .tb_events thead th:first-child {
@@ -1379,6 +1386,11 @@ body.loaded .loading-spinner {
     .tb_events thead th:last-child {
 
         padding-bottom: 0;
+    }
+    .tb_events tbody{
+
+
+
     }
     .tb_events tbody tr td:first-child {
         height: 104px;

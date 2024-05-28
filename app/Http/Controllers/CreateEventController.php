@@ -14,11 +14,11 @@ class CreateEventController extends Controller
         if ($request->hasFile('picture')) {
             // Получаем файл из запроса
             $picture = $request->file('picture');
-            
+
             // Сохраняем файл
             $path = $picture->store('picture', 'public');
-            
-          
+
+
         }
         // Проводим валидацию данных с помощью EventRequest
 
@@ -29,6 +29,8 @@ class CreateEventController extends Controller
         $event->picture = $path ?? $event->picture = null;
         $event->date_start = $request->input('date_start');
         $event->date_end = $request->input('date_end');
+        $event->time_start = $request->input('time_start');
+        $event->time_end = $request->input('time_end');
         $event->organizer = $request->input('organizer');
         $event->location = $request->input('location');
         $event->require = $request->input('require');

@@ -18,10 +18,14 @@ return new class extends Migration
             $table->string('picture')->nullable();
             $table->date('date_start');
             $table->date('date_end')->nullable();
+            $table->time('time_start');
+            $table->time('time_end');
             $table->string('organizer');
             $table->string('location');
             $table->text('require')->nullable();
+            $table->softDeletes();
             $table->timestamps();
+
         });
     }
 

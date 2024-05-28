@@ -5,7 +5,7 @@
     "src": "resources/css/app.css"
   },
   "resources/css/style.css": {
-    "file": "assets/style-For7An_c.css",
+    "file": "assets/style-CnejFZjr.css",
     "isEntry": true,
     "src": "resources/css/style.css"
   },
@@ -35,7 +35,7 @@
     "src": "resources/js/jquery-3.6.4.min.js"
   },
   "resources/js/popup.js": {
-    "file": "assets/popup-sOUrOM1J.js",
+    "file": "assets/popup-bxkkJ24X.js",
     "isEntry": true,
     "src": "resources/js/popup.js"
   },
@@ -45,7 +45,7 @@
     "src": "resources/js/scrollMain.js"
   },
   "resources/scss/app.scss": {
-    "file": "assets/app-2107RP9e.css",
+    "file": "assets/app-ab02t9tp.css",
     "isEntry": true,
     "src": "resources/scss/app.scss"
   }

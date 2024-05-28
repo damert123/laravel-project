@@ -74,7 +74,7 @@
                         </div>
                         <div class="event-text">
                             <img src="{{ asset('img/date.svg') }}" alt="">
-                            <p>Начало {{ $event->date_start }} </p>
+                            <p> {{ $event->formatted_date_start }}– {{$event->formatted_date_end}}</p>
                         </div>
                         <div class="event-text">
                             <img src="{{ asset('img/location.svg') }}" alt="">
@@ -84,10 +84,10 @@
 
                     <div class="event-item-function">
 
-                        <h3>Период отбора:</h3>
+                        <h3>Часы проведения</h3>
                         <div class="event-text">
                             <img src="{{ asset('img/time.svg') }}" alt="">
-                            <p>18 марта – 11 июня 2023</p>
+                            <p>{{$event->formatted_time_start}} - {{$event->formatted_time_end}}</p>
                         </div>
                         <h3>Требования:</h3>
                         <div class="event-text">

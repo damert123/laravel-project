@@ -87,9 +87,12 @@ Route::prefix('admin')->name('admin.')->group(function () {
         ->middleware('auth', 'admin' );
 
 
-
     Route::delete('/event/delete/{id}', [EventController::class, 'deleteEvent'])
         ->name('event.delete')
+        ->middleware('auth', 'admin');
+
+    Route::delete('/event/soft-delete/{id}', [EventController::class, 'softDeleteEvent'])
+        ->name('event.soft-delete')
         ->middleware('auth', 'admin');
 
     Route::get('/event/edit-event/{id}', [EventController::class, 'openEdit'])

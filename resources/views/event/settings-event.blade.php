@@ -38,7 +38,7 @@
             <td>
                 <div class="settings-event-btn">
                     <a href="{{route ('admin.event.edit-event' , ['id' => $event->id])}}"><img src="{{ asset('img/settings.svg') }}" alt=""></a>
-                    <a href="" style="background-color:#fb4242;"><img src="{{ asset('img/event/off.svg') }}" alt=""></a>
+                    <a href="#" data-event-id="{{ $event->id }}" class="soft-delete-event" style="background-color:#fb4242;"><img src="{{ asset('img/event/off.svg') }}" alt=""></a>
                     <a href="#" class="delete-event" data-event-id="{{ $event->id }}" style="background-color:#3F3E46;"><img src="{{ asset('img/event/delete.svg') }}"  alt=""></a>
                 </div>
 
@@ -70,10 +70,27 @@
     </div>
 </div>
 
+    <div class="popup-bg-soft-delete">
+        <div class="block-members-event popup">
+            <img class="close-popup-soft-delete" src="{{ asset('img/close.svg') }}" alt="icon">
+            <div class="members-event-popup">
+                <h2 style="margin:50px 0 20px 0; text-align: center;">Завершить мероприятие?</h2>
+
+                <div class="delete-confirm">
+                    <a href="#" class="cancel-soft-delete">Нет</a>
+                    <form id="softDeleteEventForm" action="{{ route('admin.event.soft-delete', ['id' => $event->id]) }}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" style="background-color:#ff6a6a;">Да</button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
 
 
-
-<div class="popup-bg-delete ">
+<div class="popup-bg-delete">
     <div class="block-members-event popup">
         <img class="close-popup-delete" src="{{ asset('img/close.svg') }}" alt="icon">
         <div class="members-event-popup">
@@ -91,6 +108,8 @@
         </div>
     </div>
 </div>
+
+    <div class="my-nav container">{{$events->withQueryString()->links('pagination::bootstrap-4')}}</div>
 
 @else
 

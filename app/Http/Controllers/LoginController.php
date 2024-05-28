@@ -13,12 +13,12 @@ class LoginController extends Controller
 
 
     if(Auth::check()){
-        return redirect()->intended(route('use.private'));
+        return redirect()->intended(route('user.private'));
     }
-    
 
-    $formFields = $request->only(['email', 'pass']);                                                                                                                            
-   
+
+    $formFields = $request->only(['email', 'pass']);
+
 
     $user = User::where('email', $formFields['email'])->first();
 
@@ -29,28 +29,28 @@ class LoginController extends Controller
             Auth::login($user);
             return redirect()->intended(route('user.private'));
         }
-        
+
     }
     return redirect(route('user.login'))->withErrors([
         'email' => 'Не удалось авторизоваться'
     ]);
-   
+
 }
 
         public function logout(Request $request)
         {
             // Очищаем данные сессии
             $request->session()->invalidate();
-            
+
             // Регенерируем CSRF-токен
             $request->session()->regenerateToken();
-            
+
             // Очищаем все данные сессии
             $request->session()->flush();
 
             // Выходим из системы
             Auth::logout();
-            
+
             // Перенаправляем на главную страницу или куда-то еще
             return redirect('/');
         }

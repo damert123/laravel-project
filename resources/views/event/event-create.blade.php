@@ -12,8 +12,6 @@
         <h1 class='anim_items' style="margin-bottom: 10px;">Создать Мероприятие</h1>
 
         <div class="news-backgr">
-
-
             <div class="news-flex">
                 <div class="news-added-img">
                     <p>Загрузить картинку</p>
@@ -36,13 +34,27 @@
                 <div class="event-date">
                     <div class="">
                         <p>Даты проведения С:</p>
-                        <input type="date" name="date_start" class="@error('date_start') error-event @enderror">
+                        <input type="date" name="date_start" value="{{old('date_start')}}" class="@error('date_start') error-event @enderror">
 
                     </div>
 
                     <div class="">
                         <p>ДО:(необязательно) </p>
-                        <input type="date" name="date_end" class="@error('date_end') error-event @enderror">
+                        <input type="date" name="date_end" value="{{old('date_end')}}" class="@error('date_end') error-event @enderror">
+
+                    </div>
+                </div>
+
+                <div class="event-date">
+                    <div>
+                        <p>Время проведения С:</p>
+                        <input type="time" name="time_start" value="{{old('time_start')}}" class="@error('time_start') error-event @enderror">
+
+                    </div>
+
+                    <div >
+                        <p>ДО:</p>
+                        <input type="time" name="time_end" value="{{old('time_end')}}" class="@error('time_end') error-event @enderror">
 
                     </div>
                 </div>
@@ -56,7 +68,7 @@
 
                     <div class="news-added-logo">
                         <p>Заголовок мероприятия</p>
-                        <input name="header" type="text" class="@error('header') error-event @enderror">
+                        <input name="header" type="text" value="{{old('header')}}" class="@error('header') error-event @enderror">
                         @error('header')
                                     <div class="error-message">{{$message}}</div>
                                     @enderror
@@ -65,7 +77,7 @@
 
                     <div class="news-added-description">
                         <p>Описание мероприятия</p>
-                        <textarea  name="descrip"  class="@error('descrip') error-event @enderror"></textarea>
+                        <textarea  name="descrip" class="@error('descrip') error-event @enderror">{{old('descrip')}}</textarea>
                         @error('descrip')
                                     <div class="error-message">{{$message}}</div>
                                     @enderror
@@ -75,21 +87,21 @@
                 <div class="news-info-block">
                     <div class="event-added-info">
                         <p>Организатор</p>
-                        <input name="organizer" type="text" placeholder="Например: ТСПК" class="@error('organizer') error-event @enderror">
+                        <input name="organizer" value="{{old('organizer')}}" type="text" placeholder="Например: ТСПК" class="@error('organizer') error-event @enderror">
                         @error('organizer')
                                     <div class="error-message">{{$message}}</div>
                                     @enderror
                     </div>
                     <div class="event-added-info">
                         <p>Место проведения</p>
-                        <input name="location" type="text" placeholder="Адрес или Онлайн (ссылка)" class="@error('location') error-event @enderror">
+                        <input name="location" type="text" value="{{old('location')}}" placeholder="Адрес или Онлайн (ссылка)" class="@error('location') error-event @enderror">
                         @error('location')
                                     <div class="error-message">{{$message}}</div>
                                     @enderror
                     </div>
                     <div class="event-added-info">
-                        <p>Требовния</p>
-                        <input name="require" type="text" placeholder="Например: 18+" class="@error('require') error-event @enderror">
+                        <p>Требования</p>
+                        <input name="require" value="{{old('require')}}" type="text" placeholder="Например: 18+" class="@error('require') error-event @enderror">
                         @error('require')
                                     <div class="error-message">{{$message}}</div>
                                     @enderror

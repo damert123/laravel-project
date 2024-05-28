@@ -8,6 +8,7 @@
 
 <div class="wrapper">
     <div class="content">
+        <h1 style="font-size: 40px; color: #4e77f4; width: 75%; margin: 50px auto ">Волонтеры</h1>
         <div class="container_tb">
             <div class="table-flex">
                 <table class="tb_members ">
@@ -27,7 +28,7 @@
 
                             <td> <div class="ava_memb">
                                     @if($user->avatar)
-                                        <img src="{{ asset('storage/' . $user->avatar) }}" style="width: 50px; border-radius: 50%;" alt="">
+                                        <img src="{{ asset('storage/' . $user->avatar) }}" style="width: 50px; border-radius: 50%; border: 2px solid #4e77f4 " alt="">
                                     @else
                                         <img src="{{ asset('img/Group.png') }}" style="width: 50px; border-radius: 50%;" alt="Default Avatar">
                                     @endif
@@ -36,13 +37,22 @@
                             <td><img src="img/heart.svg" alt="" style="width: 30px; margin-right:10px;">25</td>
                             <td>{{ $user->groupp }}</td>
                             <td>
-                                <a href=""><img src="img/memb_vk.svg" alt="" style="margin-right:5px;"></a>
+                                @if($user->profile->social_vk != null || $user->profile->social_tg != null)
+                                    @if($user->profile->social_vk !=null )
+                                <a href="{{$user->profile->social_vk}}"><img src="img/memb_vk.svg" alt="" style="margin-right:5px;"></a>
+                                    @endif
+
+                                    @if($user->profile->social_tg !=null )
                                 <a href=""><img src="img/telegram.svg" alt=""></a>
+                                        @endif
+                                @else
+                                    <p>Нет</p>
+                                @endif
                             </td>
                             <td >
-                                <a href="{{ route('profile', $user->id) }}" ><button style="height:35px">Профиль</button></a>
+                                <a  href="{{ route('profile', $user->id) }}" ><button style="height:35px; margin-bottom: 5px">Профиль</button></a>
                                 @if(Auth::check() && Auth::user()->role == \App\Models\User::ROLE_ADMIN)
-                                    <a href="{{ route('admin.members.edit-profile', $user->id) }}" >
+                                    <a   href="{{ route('admin.members.edit-profile', $user->id) }}" >
                                         <button style="width:50px; height:35px">
                                             <img style="width:20px; height:20px" src="{{ asset('img/settings.svg') }}" alt="">
                                         </button>

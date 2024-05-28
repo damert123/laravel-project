@@ -12,9 +12,13 @@
     </div>
 @endif
 
+
+
 <div class="wrapper">
     <div class="content">
         <div class="container">
+
+
             <form action="{{ route('admin.members.update-profile', $user->id) }}" method="post" enctype="multipart/form-data">
                 @csrf
 
