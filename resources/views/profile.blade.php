@@ -28,7 +28,7 @@
                         <h2>Добрых дел</h2>
 
 
-                        <h2><img src="{{ asset('img/heart.svg') }}" alt="">3</h2>
+                        <h2><img src="{{ asset('img/heart.svg') }}" alt="">{{$user->profile->good_deeds}}</h2>
 
                     </div>
 

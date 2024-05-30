@@ -53,6 +53,26 @@
                     </div>
                 </div>
 
+                <div class="event-date">
+                    <div>
+                        <p>Время проведения С:</p>
+                        <input type="time" name="time_start" value="{{old('time_start') ?? $event->time_start}}" class="@error('time_start') error-event @enderror">
+                        @error('time_start')
+                        <div class="error-message">{{$message}}</div>
+                        @enderror
+
+                    </div>
+
+                    <div >
+                        <p>ДО:</p>
+                        <input type="time" name="time_end" value="{{old('time_end') ?? $event->time_end}}" class="@error('time_end') error-event @enderror">
+                        @error('time_end')
+                        <div class="error-message">{{$message}}</div>
+                        @enderror
+
+                    </div>
+                </div>
+
             </div>
 
 

@@ -71,6 +71,9 @@ class EventController extends Controller
     {
         $event = Event::findOrFail($id);
 
+        $event->time_start = Carbon::parse($event->time_start)->format('H:i');
+        $event->time_end = Carbon::parse($event->time_end)->format('H:i');
+
         $participants = $event->users;
 
 
