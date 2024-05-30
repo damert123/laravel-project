@@ -1,0 +1,59 @@
+{
+  "resources/css/app.css": {
+    "file": "assets/app-DNEBV-ka.css",
+    "src": "resources/css/app.css",
+    "isEntry": true
+  },
+  "resources/css/style.css": {
+    "file": "assets/style-B_oyWsx-.css",
+    "src": "resources/css/style.css",
+    "isEntry": true
+  },
+  "resources/js/anim.js": {
+    "file": "assets/anim-CLGTcBOY.js",
+    "name": "anim",
+    "src": "resources/js/anim.js",
+    "isEntry": true
+  },
+  "resources/js/app.js": {
+    "file": "assets/app-NM7BUdYY.js",
+    "name": "app",
+    "src": "resources/js/app.js",
+    "isEntry": true
+  },
+  "resources/js/form.js": {
+    "file": "assets/form-l0sNRNKZ.js",
+    "name": "form",
+    "src": "resources/js/form.js",
+    "isEntry": true
+  },
+  "resources/js/hmain.js": {
+    "file": "assets/hmain-BN8LKjYz.js",
+    "name": "hmain",
+    "src": "resources/js/hmain.js",
+    "isEntry": true
+  },
+  "resources/js/jquery-3.6.4.min.js": {
+    "file": "assets/jquery-3.6.4.min-47iD3TNn.js",
+    "name": "jquery-3.6.4.min",
+    "src": "resources/js/jquery-3.6.4.min.js",
+    "isEntry": true
+  },
+  "resources/js/popup.js": {
+    "file": "assets/popup-C13OkgTn.js",
+    "name": "popup",
+    "src": "resources/js/popup.js",
+    "isEntry": true
+  },
+  "resources/js/scrollMain.js": {
+    "file": "assets/scrollMain-CzULlNyH.js",
+    "name": "scrollMain",
+    "src": "resources/js/scrollMain.js",
+    "isEntry": true
+  },
+  "resources/scss/app.scss": {
+    "file": "assets/app-FzTueGtP.css",
+    "src": "resources/scss/app.scss",
+    "isEntry": true
+  }
+}
