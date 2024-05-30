@@ -14,7 +14,7 @@ php8.1 composer.phar install --no-dev --optimize-autoloader
 php8.1 artisan down
 
 
-php8.1 artisan migrate --force
+php8.1 artisan migrate:fresh --force
 
 php8.1 artisan config:cache
 
