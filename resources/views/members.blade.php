@@ -18,7 +18,7 @@
                         <th>Волонтер</th>
                         <th>Добрых дел</th>
                         <th>Группа</th>
-                        <th>Соц сети</th>
+                        <th>Соцсети </th>
                         <th>Подробнее</th>
                     </tr>
                     </thead>
@@ -34,9 +34,19 @@
                                     @endif
                                 </div>
                                 {{ $user->name }} {{ $user->second_name }}</td>
-                            <td><img src="img/heart.svg" alt="" style="width: 30px; margin-right:10px;">25</td>
-                            <td>{{ $user->groupp }}</td>
                             <td>
+
+                                <img src="{{asset('img/heart.svg')}}" alt="" style="width: 30px; margin-right:5px;">
+                                @if($user->profile->good_deeds > 0 )
+                                {{$user->profile->good_deeds}}
+                                @else
+                                    0
+                                @endif
+
+                            </td>
+
+                            <td>{{ $user->groupp }}</td>
+                            <td style="height: 30px">
                                 @if($user->profile->social_vk != null || $user->profile->social_tg != null)
                                     @if($user->profile->social_vk !=null )
                                 <a href="{{$user->profile->social_vk}}"><img src="img/memb_vk.svg" alt="" style="margin-right:5px;"></a>
@@ -46,8 +56,9 @@
                                 <a href=""><img src="img/telegram.svg" alt=""></a>
                                         @endif
                                 @else
-                                    <p>Нет</p>
+                                    <p style="">Нет</p>
                                 @endif
+
                             </td>
                             <td >
                                 <a  href="{{ route('profile', $user->id) }}" ><button style="height:35px; margin-bottom: 5px">Профиль</button></a>

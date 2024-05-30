@@ -9,8 +9,14 @@
 @auth
 <div class="container news">
         <h1 class="anim_items">Последние новости</h1>
+    @if($freshNews->count()==0)
+        <div style="height: 200px; display: flex; align-items: center; justify-content: center"><p
+                style="text-align: center; font-size: 30px; color: #3F3E46; opacity: 0.5">НЕТ
+                НОВОСТЕЙ</p></div>
+    @else
 
         <div class="news_blocks">
+
 
         @foreach ($freshNews as $item)
         <article class="new_block">
@@ -41,9 +47,13 @@
 
 
         </div>
+
         <a class="btn_more" href="{{route('news')}}">Читать больше</a>
         <img src="" alt="">
+    @endif
     </div>
+
+
 
     <!-- Конец блока с новостями -->
 

@@ -61,10 +61,12 @@
             <div class="member-stat-social-block">
                 <div class="member-stat">
                     <h2>Добрых дел</h2>
+                    <h2><img src="{{ asset('img/heart.svg') }}" alt="">{{$profile->good_deeds}}</h2>
+                </div>
 
-
-                    <h2><img src="{{ asset('img/heart.svg') }}" alt="">3</h2>
-
+                <div class="member-hours">
+                    <h2>Часы</h2>
+                    <h2><img src="{{ asset('img/timeblue.svg') }}" alt="">{{$profile->hours_spent}}</h2>
                 </div>
 
 

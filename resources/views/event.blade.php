@@ -31,6 +31,12 @@
                 @endif
             </div>
 
+            @if($event->count()==0)
+                <div style="height: 200px; display: flex; align-items: center; justify-content: center"><p
+                        style="text-align: center; font-size: 30px; color: #3F3E46; opacity: 0.5">НЕТ
+                        МЕРОПРИЯТИЙ</p></div>
+            @else
+
             <div class="event-items">
                 @foreach($event as $item)
                     <article>
@@ -63,6 +69,7 @@
                     <div class="my-nav container">{{$event->withQueryString()->links('pagination::bootstrap-4')}}</div>
             </div>
         </div>
+        @endif
     </div>
 
 </div>

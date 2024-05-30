@@ -32,13 +32,19 @@
 
                     </div>
 
-                    <div class="member-social">
-                        <p><img src="" alt="">Соц-сети</p>
-                        <div class="member-social-img">
-                            <a href=""><img src="{{ asset('img/memb_vk.svg') }}" alt="" style="margin-right:10px;"></a>
-                            <a href=""><img src="{{ asset('img/telegram.svg') }}" alt=""></a>
+                    @if($user->profile->social_vk != null || $user->profile->social_tg != null)
+                        <div class="member-social">
+                            <p><img src="" alt="">Соц-сети</p>
+                            <div class="member-social-img">
+                                @if($user->profile->social_vk != null)
+                                    <a href="{{$user->profile->social_vk}}"><img src="{{ asset('img/memb_vk.svg') }}" alt="" style="margin-right:10px;"></a>
+                                @endif
+                                @if($user->profile->social_tg != null)
+                                    <a href="{{$user->profile->social_tg}}"><img src="{{ asset('img/telegram.svg') }}" alt=""></a>
+                                @endif
+                            </div>
                         </div>
-                    </div>
+                    @endif
                 </div>
 
 
@@ -74,13 +80,21 @@
 
                 <div class="member-info">
 
+
+                    <div class="member-mail">
+                        <h2><img src="{{ asset('img/timeblue.svg') }}" alt="">Часы:</h2>
+                        @if($user->profile->hours_spent > 0 )
+                            <p>{{$user->profile->hours_spent}}</p>
+
+                        @else
+                            <p>0</p>
+
+                        @endif
+                    </div>
+
                     <div class="member-group">
                         <h2><img src="{{ asset('img/gruup.svg') }}" alt="">Группа: </h2>
                         <p>{{ $user->groupp }}</p>
-                    </div>
-                    <div class="member-mail">
-                        <h2><img src="{{ asset('img/mail.svg') }}" alt="">Почта</h2>
-                        <p>{{ $user->email }}</p>
                     </div>
 
                 </div>

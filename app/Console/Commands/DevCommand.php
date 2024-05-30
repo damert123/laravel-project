@@ -2,6 +2,8 @@
 
 namespace App\Console\Commands;
 
+use App\Models\Event;
+use Carbon\Carbon;
 use Illuminate\Console\Command;
 
 class DevCommand extends Command
@@ -25,20 +27,18 @@ class DevCommand extends Command
      */
     public function handle()
     {
-        $vkUrl = 'https://vk.com/kan0xa';
-        $tgUrl = 'https://t.me/username';
-        $invalidUrl = 'https://gfdsgsdfg/gfdsgsdf';
+        $event = Event::find(11);
+        $date_start = Carbon::parse($event->date_start);
+        $date_end = Carbon::parse($event->date_end);
+        $days = $date_end->diffInDays($date_start)+1;
 
-        function validateVkUrl($url) {
-            return preg_match('/^https:\/\/vk\.com\/[A-Za-z0-9_.-]+$/', $url);
-        }
+        $time_start = Carbon::parse($event->time_start);
+        $time_end = Carbon::parse($event->time_end);
+        $hoursPerDay = $time_end->diffInHours($time_start);
 
-        function validateTgUrl($url) {
-            return preg_match('/^https:\/\/t\.me\/[A-Za-z0-9_.-]+$/', $url);
-        }
+        $totalhours = $hoursPerDay * $days;
 
-        echo "VK URL valid: " . (validateVkUrl($vkUrl) ? 'true' : 'false') . "\n";
-        echo "TG URL valid: " . (validateTgUrl($tgUrl) ? 'true' : 'false') . "\n";
-        echo "Invalid URL valid: " . (validateVkUrl($invalidUrl) ? 'true' : 'false') . "\n";
+        dd($days, $totalhours);
+
     }
 }
